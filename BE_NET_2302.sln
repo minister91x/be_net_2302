@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_NET_2302", "BE_NET_2302\BE_NET_2302.csproj", "{CD2B0E06-8657-43DE-8B4D-653144BA1038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCoban", "CSharpCoban\CSharpCoban.csproj", "{00361DCE-FA3C-4DD0-AF81-3F94F4EF1A80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CD2B0E06-8657-43DE-8B4D-653144BA1038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD2B0E06-8657-43DE-8B4D-653144BA1038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD2B0E06-8657-43DE-8B4D-653144BA1038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00361DCE-FA3C-4DD0-AF81-3F94F4EF1A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00361DCE-FA3C-4DD0-AF81-3F94F4EF1A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00361DCE-FA3C-4DD0-AF81-3F94F4EF1A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00361DCE-FA3C-4DD0-AF81-3F94F4EF1A80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

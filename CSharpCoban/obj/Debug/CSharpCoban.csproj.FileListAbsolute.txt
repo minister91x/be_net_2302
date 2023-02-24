@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\bin\Debug\CSharpCoban.exe.config
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\bin\Debug\CSharpCoban.exe
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\bin\Debug\CSharpCoban.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.exe
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.pdb
