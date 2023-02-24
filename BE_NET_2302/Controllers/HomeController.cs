@@ -15,6 +15,7 @@ namespace BE_NET_2302.Controllers
 
         public ActionResult About()
         {
+            //Comment code
             ViewBag.Message = "Your application description page.";
 
             return View();
