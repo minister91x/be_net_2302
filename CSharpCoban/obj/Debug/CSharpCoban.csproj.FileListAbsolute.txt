@@ -6,3 +6,6 @@ C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj
 C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.exe
 C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\bin\Debug\ClassLibraryDemo.dll
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\bin\Debug\ClassLibraryDemo.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\CSharpCoban\obj\Debug\CSharpCoban.csproj.CopyComplete

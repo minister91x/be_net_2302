@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\bin\Debug\ClassLibraryDemo.dll
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\bin\Debug\ClassLibraryDemo.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\obj\Debug\ClassLibraryDemo.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\obj\Debug\ClassLibraryDemo.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\obj\Debug\ClassLibraryDemo.dll
+C:\Users\Admin\source\repos\BE_NET_2302\ClassLibraryDemo\obj\Debug\ClassLibraryDemo.pdb
