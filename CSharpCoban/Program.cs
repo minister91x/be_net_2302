@@ -15,9 +15,9 @@ namespace CSharpCoban
             {
                 result = a / b;
             }
-            catch(DivideByZeroException ex2)
+            catch (DivideByZeroException ex2)
             {
-               
+
             }
             catch (OutOfMemoryException ex3)
             {
@@ -98,21 +98,41 @@ namespace CSharpCoban
             //ThamChieuThamTri(ref a);
             //Console.WriteLine("giá trị sau khi gọi hàm tham chiếu out {0}", a);
 
-            try
-            {
-                var str = "demo custom exception";
-                UserInput(str);
-            }
-            catch(DataTooLongExeption ex)
-            {
-                throw ex;
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    var str = "demo custom exception";
+            //    UserInput(str);
+            //}
+            //catch (DataTooLongExeption ex)
+            //{
+            //    throw ex;
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
+            //    throw;
+            //}
+
+
+            var lstInt = new List<int>();
+            lstInt.Add(1);
+            lstInt.Add(2);
+            lstInt.Add(3);
+            lstInt.Add(4);
+
+            for (int i = 0; i < lstInt.Count; i++)
+            {
+                Console.WriteLine("vi trí {0}- giá trị ={1}", i, lstInt[i]);
             }
-           
+
+            if (lstInt.Count > 0)
+            {
+                foreach (var item in lstInt)
+                {
+                    Console.WriteLine(" giá trị ={0}", item);
+                }
+            }
+
             Console.ReadLine();
 
 
