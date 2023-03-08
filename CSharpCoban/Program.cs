@@ -64,6 +64,31 @@ namespace CSharpCoban
             //Other code - no exeption
         }
 
+        struct People
+        {
+            public People(string _name, int _age)
+            {
+                Name = _name;
+                Age = _age;
+            }
+            public string Name { get; set; }
+            public int Age { get; set; }
+
+            public int Run()
+            {
+                return 10;
+            }
+        }
+
+
+        enum Enum_TransactionStatus
+        {
+            ThanhCong = 1,
+            ThatBai = 0,
+            DangVanChuyen = 2,
+            ChoLayHang = 3
+        }
+
         static void Main(string[] args)
         {
             // ấn F10 để đi debug từng dòng
@@ -114,27 +139,66 @@ namespace CSharpCoban
             //}
 
 
-            var lstInt = new List<int>();
-            lstInt.Add(1);
-            lstInt.Add(2);
-            lstInt.Add(3);
-            lstInt.Add(4);
+            //var lstInt = new List<int>();
+            //lstInt.Add(1);
+            //lstInt.Add(2);
+            //lstInt.Add(3);
+            //lstInt.Add(4);
 
-            for (int i = 0; i < lstInt.Count; i++)
-            {
-                Console.WriteLine("vi trí {0}- giá trị ={1}", i, lstInt[i]);
-            }
+            //for (int i = 0; i < lstInt.Count; i++)
+            //{
+            //    Console.WriteLine("vi trí {0}- giá trị ={1}", i, lstInt[i]);
+            //}
 
-            if (lstInt.Count > 0)
+            //if (lstInt.Count > 0)
+            //{
+            //    foreach (var item in lstInt)
+            //    {
+            //        Console.WriteLine(" giá trị ={0}", item);
+            //    }
+            //}
+            try
             {
-                foreach (var item in lstInt)
+                //Console.WriteLine("nhập giá tri:");
+                //var input_keyboard = Console.ReadLine().ToString();
+
+                //int input = int.Parse(Console.ReadLine());
+
+
+
+                //var _peple = new People("MyName is Quân", 18);
+                //Console.WriteLine("Name {0}:", _peple.Name);
+                //Console.WriteLine("Age {0}:", _peple.Age);
+                //Console.ReadLine();
+
+                //var status = Convert.ToInt32(Enum_TransactionStatus.ThatBai);
+                //var status2 = (int)Enum_TransactionStatus.ThatBai;
+                //var status3 = int.Parse(Enum_TransactionStatus.ThatBai.ToString());
+
+
+                string[] cars = { "Honda", "BMW", "Ford", "Mazda" };
+                int[] numbers = { 0, 1, 8, 2, 5, 10, 3 };
+
+                //Console.WriteLine("cars {0}:", cars[10]);
+                Array.Sort(numbers);
+
+                //for (int i = 0; i < cars.Length; i++)
+                //{
+                //    Console.WriteLine("cars {0}:", cars[i]);
+                //}
+
+                foreach (var item in numbers)
                 {
-                    Console.WriteLine(" giá trị ={0}", item);
+                    Console.WriteLine("cars {0}:", item);
                 }
+
+                Console.ReadLine();
             }
+            catch (Exception ex)
+            {
 
-            Console.ReadLine();
-
+                throw;
+            }
 
         }
 
