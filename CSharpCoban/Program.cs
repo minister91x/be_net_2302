@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -88,7 +91,20 @@ namespace CSharpCoban
             DangVanChuyen = 2,
             ChoLayHang = 3
         }
+       static string GetMd5Hash(string input)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder sBuilder = new StringBuilder();
 
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                return sBuilder.ToString();
+            }
+        }
         static void Main(string[] args)
         {
             // ấn F10 để đi debug từng dòng
@@ -187,10 +203,121 @@ namespace CSharpCoban
                 //    Console.WriteLine("cars {0}:", cars[i]);
                 //}
 
-                foreach (var item in numbers)
+                //foreach (var item in numbers)
+                //{
+                //    Console.WriteLine("cars {0}:", item);
+                //}
+
+                var currentDatetime = DateTime.Now;
+                Console.WriteLine("currentDatetime {0}:", currentDatetime);
+
+                var newDateTime = currentDatetime.AddHours(-1).AddMinutes(-30).AddSeconds(0);
+
+                Console.WriteLine("newDateTime AddHours 2 hours {0}:", newDateTime);
+
+                var timeSpan = new TimeSpan(-1, -30, 0);
+                var newDatetimeWithTimeSpan = currentDatetime.Add(timeSpan);
+
+                Console.WriteLine("newDateTime WithTimeSpan {0}:", newDateTime);
+
+                var firstDayofMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 15, 5, 0);
+
+                var lastDayOfMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+                Console.WriteLine("dd/MM/yyyy HH:mm:ss {0}:", firstDayofMonth.ToString("dd/MM/yy HH:mm:ss"));
+                Console.WriteLine("yy/MM/dd HH:mm:ss {0}:", firstDayofMonth.ToString("yy/MM/dd HH:mm:ss"));
+
+                //char[] formats = { 'd', 'D', 'f', 'F', 'g', 'G', 'M', 'm', 'O', 'o', 'R', 'r', 's', 't', 'T', 'u', 'U', 'Y', 'y' };
+                //DateTime aDateTime = new DateTime(2022, 8, 23, 19, 30, 00);
+                //foreach (char ch in formats)
+                //{
+                //    Console.WriteLine("\n======" + ch + " ========\n");
+                //    // Các định dạng date-time được hỗ trợ.
+                //    string[] formattedStrings = aDateTime.GetDateTimeFormats(ch);
+
+                //    foreach (string format in formattedStrings)
+                //    {
+                //        Console.WriteLine(format);
+                //    }
+                //}
+                var text = "15/03/2022";
+
+                //A: Setup and stuff you don't want timed
+               
+
+
+                //var timerCobvert = new Stopwatch();
+                //timerCobvert.Start();
+                //var textToDateTime = Convert.ToDateTime(text, CultureInfo.InvariantCulture);
+
+                //timerCobvert.Stop();
+
+                //TimeSpan timeTakenConvert = timerCobvert.Elapsed;
+
+                //Console.WriteLine("Convert DateTime Time taken {0}", timeTakenConvert.ToString(@"m\:ss\.fff"));
+
+                //  var date = DateTime.ParseExact(text, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+                //DateTime dateValue;
+                //if (!DateTime.TryParseExact(text, "dd/MM/yyyy HH:mm:ss", new CultureInfo("en-US"),
+                //    DateTimeStyles.None, out dateValue))
+                //{
+                //}
+
+                string myText = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
+                string myText2 = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
+                var length = myText.Length;
+                Console.WriteLine("length of mytext {0}", length);
+                var textConcat = myText.Replace("mvc", "MVC 5");
+                Console.WriteLine("textConcat {0}", textConcat);
+
+                string myText3 = "1,2,3,4,";
+
+                Console.OutputEncoding = System.Text.Encoding.UTF8;
+                myText3 = myText3.Substring(0, myText3.Length - 1);
+
+                Console.WriteLine("substring : {0}", myText3);
+
+                for (int i = 0; i < myText3.Split(',').Length; i++)
                 {
-                    Console.WriteLine("cars {0}:", item);
+                    Console.WriteLine("vị trí : {0} - giá trị: {1}", i, myText3.Split(',')[i]);
                 }
+
+
+             
+
+               
+
+              
+               
+
+                var timer = new Stopwatch();
+                timer.Start();
+
+                var mytext4 = myText + myText2;
+                Console.WriteLine("mytext4 : {0}", mytext4);
+                timer.Stop();
+
+                TimeSpan timeTaken = timer.Elapsed;
+                Console.WriteLine("String concat Time taken {0}", timeTaken.ToString(@"m\:ss\.fff"));
+
+
+                var timerCobvert = new Stopwatch();
+                timerCobvert.Start();
+
+                var mytext5 = new StringBuilder("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
+                var mytext6 = mytext5.Append("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
+                Console.WriteLine("mytext6 : {0}", mytext6);
+
+                var hash = GetMd5Hash(myText3);
+                Console.WriteLine("hash md5 : {0}", hash);
+
+                timerCobvert.Stop();
+
+                TimeSpan timeTakenConvert = timerCobvert.Elapsed;
+
+                Console.WriteLine("StringBuilder Time taken {0}", timeTakenConvert.ToString(@"m\:ss\.fff"));
+
 
                 Console.ReadLine();
             }
