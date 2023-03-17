@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -18,17 +19,8 @@ namespace CSharpCoban
             {
                 result = a / b;
             }
-            catch (DivideByZeroException ex2)
-            {
-
-            }
-            catch (OutOfMemoryException ex3)
-            {
-
-            }
             catch (Exception ex)
             {
-                /// Console.WriteLine("Hệ thống đang bận.Vui lòng quay lại sau!");
                 Console.WriteLine("{0}", ex.Message);
             }
             finally
@@ -38,6 +30,8 @@ namespace CSharpCoban
 
             return result;
         }
+
+
         static void ThamChieuThamTri(int x)
         {
             // khởi tạo ra 1 biến cục bộ 
@@ -91,7 +85,7 @@ namespace CSharpCoban
             DangVanChuyen = 2,
             ChoLayHang = 3
         }
-       static string GetMd5Hash(string input)
+        static string GetMd5Hash(string input)
         {
             using (MD5 md5Hash = MD5.Create())
             {
@@ -105,6 +99,16 @@ namespace CSharpCoban
                 return sBuilder.ToString();
             }
         }
+
+        static string HoanVi<T>(ref T a, ref T b)
+        {
+            T tmp = a;
+            a = b;
+            b = tmp;
+
+            return tmp.ToString();
+        }
+
         static void Main(string[] args)
         {
             // ấn F10 để đi debug từng dòng
@@ -243,7 +247,7 @@ namespace CSharpCoban
                 var text = "15/03/2022";
 
                 //A: Setup and stuff you don't want timed
-               
+
 
 
                 //var timerCobvert = new Stopwatch();
@@ -264,61 +268,92 @@ namespace CSharpCoban
                 //{
                 //}
 
-                string myText = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
-                string myText2 = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
-                var length = myText.Length;
-                Console.WriteLine("length of mytext {0}", length);
-                var textConcat = myText.Replace("mvc", "MVC 5");
-                Console.WriteLine("textConcat {0}", textConcat);
+                //string myText = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
+                //string myText2 = "That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment";
+                //var length = myText.Length;
+                //Console.WriteLine("length of mytext {0}", length);
+                //var textConcat = myText.Replace("mvc", "MVC 5");
+                //Console.WriteLine("textConcat {0}", textConcat);
 
-                string myText3 = "1,2,3,4,";
+                //string myText3 = "1,2,3,4,";
+                //string myText31 = "5,6,7";
+                //Console.OutputEncoding = System.Text.Encoding.UTF8;
+                //myText3 = myText3.Substring(0, myText3.Length - 1);
 
-                Console.OutputEncoding = System.Text.Encoding.UTF8;
-                myText3 = myText3.Substring(0, myText3.Length - 1);
+                //Console.WriteLine("substring : {0}", myText3);
 
-                Console.WriteLine("substring : {0}", myText3);
+                //for (int i = 0; i < myText3.Split(',').Length; i++)
+                //{
+                //    Console.WriteLine("vị trí : {0} - giá trị: {1}", i, myText3.Split(',')[i]);
+                //}
 
-                for (int i = 0; i < myText3.Split(',').Length; i++)
+
+                //var timer = new Stopwatch();
+                //timer.Start();
+
+                //var mytext4 = myText + myText2;
+                //Console.WriteLine("mytext4 : {0}", mytext4);
+                //timer.Stop();
+
+                //TimeSpan timeTaken = timer.Elapsed;
+                //Console.WriteLine("String concat Time taken {0}", timeTaken.ToString(@"m\:ss\.fff"));
+
+
+                //var timerCobvert = new Stopwatch();
+                //timerCobvert.Start();
+
+                //var mytext5 = new StringBuilder("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
+                //var mytext6 = mytext5.Append("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
+                //Console.WriteLine("mytext6 : {0}", mytext6);
+
+                //var hash = GetMd5Hash(myText3);
+                //Console.WriteLine("hash md5 : {0}", hash);
+
+                //timerCobvert.Stop();
+
+                //TimeSpan timeTakenConvert = timerCobvert.Elapsed;
+
+                //Console.WriteLine("StringBuilder Time taken {0}", timeTakenConvert.ToString(@"m\:ss\.fff"));
+
+                //int ref1 = 10;
+                //int ref2 = 11;
+                //double refd1 = 10;
+                //double refd2 = 11;
+                //Console.WriteLine("HoanVi string {0}", HoanVi(ref myText3, ref myText31));
+
+                //Console.WriteLine("HoanVi int {0}",  HoanVi(ref ref1, ref ref2));
+
+                //Console.WriteLine("HoanVi double {0}", HoanVi(ref refd1, ref refd2));
+
+                //GenericClass<int> intGenericClass = new GenericClass<int>(86);// Khời tạo class 
+                //intGenericClass.genericProperty = 2017;
+                //intGenericClass.genericMethod(2019);
+
+
+
+                //GenericClass<string> strGenericClass = new GenericClass<string>("Welcome to");
+                //strGenericClass.genericProperty = "Mr Quân";
+                //strGenericClass.genericMethod("lop_aspnet");
+
+
+                ArrayList arrayList = new ArrayList();
+                arrayList.Add(1);
+                arrayList.Add("thứ 2");
+                arrayList.Add(true);
+
+                for (int i = 0; i < arrayList.Count; i++)
                 {
-                    Console.WriteLine("vị trí : {0} - giá trị: {1}", i, myText3.Split(',')[i]);
+                    Console.WriteLine("arrayList value {0}", arrayList[i]);
+
                 }
 
+                foreach (var item in arrayList)
+                {
+                    Console.WriteLine("item value {0}", item);
+                }
 
-             
-
-               
-
-              
-               
-
-                var timer = new Stopwatch();
-                timer.Start();
-
-                var mytext4 = myText + myText2;
-                Console.WriteLine("mytext4 : {0}", mytext4);
-                timer.Stop();
-
-                TimeSpan timeTaken = timer.Elapsed;
-                Console.WriteLine("String concat Time taken {0}", timeTaken.ToString(@"m\:ss\.fff"));
-
-
-                var timerCobvert = new Stopwatch();
-                timerCobvert.Start();
-
-                var mytext5 = new StringBuilder("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
-                var mytext6 = mytext5.Append("That's really neat! However I think the accepted answer still applies - if the font that the console is using does not support unicode characters, I believe this example will not work. I can't check that, however, as I don't have access to a Windows computer at the moment");
-                Console.WriteLine("mytext6 : {0}", mytext6);
-
-                var hash = GetMd5Hash(myText3);
-                Console.WriteLine("hash md5 : {0}", hash);
-
-                timerCobvert.Stop();
-
-                TimeSpan timeTakenConvert = timerCobvert.Elapsed;
-
-                Console.WriteLine("StringBuilder Time taken {0}", timeTakenConvert.ToString(@"m\:ss\.fff"));
-
-
+                //CTRL+ K +C 
+                //CTRL+K+U
                 Console.ReadLine();
             }
             catch (Exception ex)
