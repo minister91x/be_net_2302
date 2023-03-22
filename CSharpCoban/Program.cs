@@ -30,7 +30,24 @@ namespace CSharpCoban
 
             return result;
         }
+        static int CongHaiSo(int a, int b, int c)
+        {
+            int result = 0;
+            try
+            {
+                result = a / b;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("{0}", ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
 
+            return result;
+        }
 
         static void ThamChieuThamTri(int x)
         {
@@ -352,6 +369,41 @@ namespace CSharpCoban
                     Console.WriteLine("item value {0}", item);
                 }
 
+                var parent = new ClassParent();
+
+                var class_children = new ClassChirldren();
+
+                var class_brochildren = new ClassBroChirldren();
+
+                class_children = new ClassBroChirldren();
+
+                var epkieu = (ClassBroChirldren)class_children;
+
+                var productManager = new ProductManager();
+
+                Console.WriteLine("Mời nhập lựa chọn");
+                Console.WriteLine("1: them product");
+                Console.WriteLine("2: hien thi danh sach san pham");
+                Console.WriteLine("3: sua product");
+                var chooose = Convert.ToInt32(Console.ReadLine());
+                switch (chooose)
+                {
+                    case 1:
+                        var product = new Product();
+                        Console.WriteLine("Mời nhập teen sanr phaam");
+                        var ten = Console.ReadLine();
+                        product.Name = ten;
+                        productManager.InsertProduct(product);
+                        break;
+                    case 2:
+
+                        var list = productManager.GetProucts();
+                        foreach (var item in list)
+                        {
+                            Console.WriteLine("productName {0}:", item);
+                        }
+                        break;
+                }
                 //CTRL+ K +C 
                 //CTRL+K+U
                 Console.ReadLine();

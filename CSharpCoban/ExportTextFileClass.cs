@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpCoban
 {
-    public class ExportTextFileClass : IExportData
+    public class ExportTextFileClass : IExportData, IAnimal
     {
         public string Export()
         {

@@ -43,11 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="ClassBroChirldren.cs" />
+    <Compile Include="ClassChirldren.cs" />
+    <Compile Include="ClassParent.cs" />
     <Compile Include="DataTooLongExeption.cs" />
     <Compile Include="ExportExcelFileClass.cs" />
     <Compile Include="GenericClass.cs" />
+    <Compile Include="IAnimal.cs" />
     <Compile Include="IExportData.cs" />
     <Compile Include="ExportTextFileClass.cs" />
+    <Compile Include="IProductManager.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
