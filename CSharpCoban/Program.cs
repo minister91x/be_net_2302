@@ -394,6 +394,7 @@ namespace CSharpCoban
                         var ten = Console.ReadLine();
                         product.Name = ten;
                         productManager.InsertProduct(product);
+                     
                         break;
                     case 2:
 
@@ -404,6 +405,8 @@ namespace CSharpCoban
                         }
                         break;
                 }
+
+
                 //CTRL+ K +C 
                 //CTRL+K+U
                 Console.ReadLine();

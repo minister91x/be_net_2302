@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSharpCoban
 {
-    public class Product
+    public class Orders
     {
-        public int ProductID { get; set; }
-        public string Name { get; set; }
-        public double Price { get; set; }
+        public string OrderId { get; set; }
+        public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public int Total { get; set; }
+        public double OrderTotal { get; set; }
     }
 }

@@ -54,8 +54,11 @@
     <Compile Include="IExportData.cs" />
     <Compile Include="ExportTextFileClass.cs" />
     <Compile Include="IProductManager.cs" />
+    <Compile Include="IProductOrder.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductManager.cs" />
+    <Compile Include="ProductOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,7 +80,24 @@ namespace CSharpCoban
 
         public void WriteTextFile(List<Product> products)
         {
-
+            string folder = @"C:\Temp\";
+            // Filename
+            string fileName = "Product.txt";
+            // Fullpath. You can direct hardcode it if you like.
+            string fullPath = folder + fileName;
+            // An array of strings
+            string[] authors = new string[products.Count];
+            for (int i = 0; i < authors.Length; i++)
+            {
+                authors[i] = products[i].Name;
+            }
+            // Write array of strings to a file using WriteAllLines.
+            // If the file does not exists, it will create a new file.
+            // This method automatically opens the file, writes to it, and closes file
+            File.WriteAllLines(fullPath, authors);
+            // Read a file
+            string readText = File.ReadAllText(fullPath);
+            Console.WriteLine(readText);
         }
     }
 }
