@@ -78,6 +78,15 @@ namespace CSharpCoban
             return 1;
         }
 
+        public void ProductInsert(string name,string imgae,string price ,string pricedistcount,string with,string height)
+        {
+
+        }
+
+        public void ProuductInsert(Product product)
+        {
+
+        }
         public void WriteTextFile(List<Product> products)
         {
             string folder = @"C:\Temp\";

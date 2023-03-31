@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="EmployeeManager.cs" />
+    <Compile Include="GuestManager.cs" />
+    <Compile Include="ICheckIn.cs" />
+    <Compile Include="CheckinDate.cs" />
     <Compile Include="ClassBroChirldren.cs" />
     <Compile Include="ClassChirldren.cs" />
     <Compile Include="ClassParent.cs" />
@@ -51,11 +55,16 @@
     <Compile Include="ExportExcelFileClass.cs" />
     <Compile Include="GenericClass.cs" />
     <Compile Include="IAnimal.cs" />
+    <Compile Include="IEmployee.cs" />
     <Compile Include="IExportData.cs" />
     <Compile Include="ExportTextFileClass.cs" />
+    <Compile Include="IGuest.cs" />
+    <Compile Include="ILabor.cs" />
     <Compile Include="IProductManager.cs" />
     <Compile Include="IProductOrder.cs" />
+    <Compile Include="LaborManager.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductManager.cs" />
     <Compile Include="ProductOrder.cs" />

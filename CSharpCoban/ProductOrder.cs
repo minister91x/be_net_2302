@@ -33,16 +33,16 @@ namespace CSharpCoban
             /// Bước 3
             var total = product.Price * quantity;
 
-            var ordertotal = quantity >= 5 ? total - total * 0.95 : total;
+            var ordertotal = quantity >= 5 ?  total * 0.95 : total;
 
-            
+
             orders.Add(new Orders
             {
-                OrderId = Guid.NewGuid().ToString(),
+                OrderId = "DH_" + DateTime.Now.Ticks,
                 ProductId = productid,
                 Quantity = quantity,
-                OrderTotal= ordertotal
-            });
+                OrderTotal = ordertotal
+            }); ;
 
             return 1;
 

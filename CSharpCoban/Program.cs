@@ -62,6 +62,10 @@ namespace CSharpCoban
             Console.WriteLine(x);
         }
 
+        /// <summary>
+        ///  Hàm này làm làm gì đó 
+        /// </summary>
+        /// <param name="x">x là giá trì từ bên trong lấy ra </param>
         static void ThamChieuThamTri_Out(out int x)
         {
             //Sử dụng luôn biến đã được khai báo trước đó 
@@ -73,11 +77,16 @@ namespace CSharpCoban
             if (s.Length > 10)
             {
                 Exception e = new DataTooLongExeption();
-                throw e;    // lỗi văng ra
+                throw e;    // lỗi văng ra 
             }
             //Other code - no exeption
+
+            /// CTRL+K + C
+            /// 
         }
 
+
+       
         struct People
         {
             public People(string _name, int _age)
@@ -394,7 +403,7 @@ namespace CSharpCoban
                         var ten = Console.ReadLine();
                         product.Name = ten;
                         productManager.InsertProduct(product);
-                     
+
                         break;
                     case 2:
 
@@ -405,6 +414,14 @@ namespace CSharpCoban
                         }
                         break;
                 }
+
+                var listCheckIn = new List<CheckinDate>();
+                var CheckInDate = new CheckinDate();
+
+
+                CheckInDate.HourCheckIn = 8;
+                CheckInDate.CheckInDate = new DateTime(2023, 03, 31);
+                listCheckIn.Add(CheckInDate);
 
 
                 //CTRL+ K +C 
