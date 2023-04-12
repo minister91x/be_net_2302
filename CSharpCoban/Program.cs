@@ -86,7 +86,7 @@ namespace CSharpCoban
         }
 
 
-       
+
         struct People
         {
             public People(string _name, int _age)
@@ -362,67 +362,84 @@ namespace CSharpCoban
                 //strGenericClass.genericMethod("lop_aspnet");
 
 
-                ArrayList arrayList = new ArrayList();
-                arrayList.Add(1);
-                arrayList.Add("thứ 2");
-                arrayList.Add(true);
+                //ArrayList arrayList = new ArrayList();
+                //arrayList.Add(1);
+                //arrayList.Add("thứ 2");
+                //arrayList.Add(true);
 
-                for (int i = 0; i < arrayList.Count; i++)
-                {
-                    Console.WriteLine("arrayList value {0}", arrayList[i]);
+                //for (int i = 0; i < arrayList.Count; i++)
+                //{
+                //    Console.WriteLine("arrayList value {0}", arrayList[i]);
 
-                }
+                //}
 
-                foreach (var item in arrayList)
-                {
-                    Console.WriteLine("item value {0}", item);
-                }
+                //foreach (var item in arrayList)
+                //{
+                //    Console.WriteLine("item value {0}", item);
+                //}
 
-                var parent = new ClassParent();
+                //var parent = new ClassParent();
 
-                var class_children = new ClassChirldren();
+                //var class_children = new ClassChirldren();
 
-                var class_brochildren = new ClassBroChirldren();
+                //var class_brochildren = new ClassBroChirldren();
 
-                class_children = new ClassBroChirldren();
+                //class_children = new ClassBroChirldren();
 
-                var epkieu = (ClassBroChirldren)class_children;
+                //var epkieu = (ClassBroChirldren)class_children;
 
-                var productManager = new ProductManager();
+                //var productManager = new ProductManager();
 
-                Console.WriteLine("Mời nhập lựa chọn");
-                Console.WriteLine("1: them product");
-                Console.WriteLine("2: hien thi danh sach san pham");
-                Console.WriteLine("3: sua product");
-                var chooose = Convert.ToInt32(Console.ReadLine());
-                switch (chooose)
-                {
-                    case 1:
-                        var product = new Product();
-                        Console.WriteLine("Mời nhập teen sanr phaam");
-                        var ten = Console.ReadLine();
-                        product.Name = ten;
-                        productManager.InsertProduct(product);
+                //Console.WriteLine("Mời nhập lựa chọn");
+                //Console.WriteLine("1: them product");
+                //Console.WriteLine("2: hien thi danh sach san pham");
+                //Console.WriteLine("3: sua product");
+                //var chooose = Convert.ToInt32(Console.ReadLine());
+                //switch (chooose)
+                //{
+                //    case 1:
+                //        var product = new Product();
+                //        Console.WriteLine("Mời nhập teen sanr phaam");
+                //        var ten = Console.ReadLine();
+                //        product.Name = ten;
+                //        productManager.InsertProduct(product);
 
-                        break;
-                    case 2:
+                //        break;
+                //    case 2:
 
-                        var list = productManager.GetProucts();
-                        foreach (var item in list)
-                        {
-                            Console.WriteLine("productName {0}:", item);
-                        }
-                        break;
-                }
+                //        var list = productManager.GetProucts();
+                //        foreach (var item in list)
+                //        {
+                //            Console.WriteLine("productName {0}:", item);
+                //        }
+                //        break;
+                //}
 
-                var listCheckIn = new List<CheckinDate>();
-                var CheckInDate = new CheckinDate();
+                //var listCheckIn = new List<CheckinDate>();
+                //var CheckInDate = new CheckinDate();
 
 
-                CheckInDate.HourCheckIn = 8;
-                CheckInDate.CheckInDate = new DateTime(2023, 03, 31);
-                listCheckIn.Add(CheckInDate);
+                //CheckInDate.HourCheckIn = 8;
+                //CheckInDate.CheckInDate = new DateTime(2023, 03, 31);
+                //listCheckIn.Add(CheckInDate);
 
+                var dbContext = new StudentModels();
+
+                var product = new Product();
+                product.Name = "Iphone 15";
+                product.Price = 100000000;
+                product.Quantity = 100;
+
+                //var product2 = new Product
+                //{
+                //    Name = "Iphone 15",
+                //    Quantity = 100,
+                //    Price = 1000000,
+                //    Total = 10000000
+                //};
+
+                dbContext.product.Add(product);
+                var result = dbContext.SaveChanges();
 
                 //CTRL+ K +C 
                 //CTRL+K+U
