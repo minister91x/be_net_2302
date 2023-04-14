@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\bin\Debug\net6.0\BE2302.DataAccess.QLBanHang.deps.json
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\bin\Debug\net6.0\BE2302.DataAccess.QLBanHang.runtimeconfig.json
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\bin\Debug\net6.0\BE2302.DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\bin\Debug\net6.0\BE2302.DataAccess.QLBanHang.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\refint\BE2302.DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\BE2302.DataAccess.QLBanHang.genruntimeconfig.cache
+C:\Users\Admin\source\repos\BE_NET_2302\BE2302.DataAccess.QLBanHang\obj\Debug\net6.0\ref\BE2302.DataAccess.QLBanHang.dll

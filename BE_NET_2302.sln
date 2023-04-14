@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCoban", "CSharpCoban\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDemo", "ClassLibraryDemo\ClassLibraryDemo.csproj", "{72955F1C-A339-4888-A6A9-4F052A99F5C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.QLBanHang", "DataAccess.QLBanHang\DataAccess.QLBanHang.csproj", "{2D612F26-E755-4B4B-BBBD-8A25256746E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE2302.DataAccess.QLBanHang", "BE2302.DataAccess.QLBanHang\BE2302.DataAccess.QLBanHang.csproj", "{88C97F7A-E4D0-44CE-8514-5FC3BAF40FDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{72955F1C-A339-4888-A6A9-4F052A99F5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72955F1C-A339-4888-A6A9-4F052A99F5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72955F1C-A339-4888-A6A9-4F052A99F5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D612F26-E755-4B4B-BBBD-8A25256746E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D612F26-E755-4B4B-BBBD-8A25256746E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D612F26-E755-4B4B-BBBD-8A25256746E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D612F26-E755-4B4B-BBBD-8A25256746E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C97F7A-E4D0-44CE-8514-5FC3BAF40FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C97F7A-E4D0-44CE-8514-5FC3BAF40FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C97F7A-E4D0-44CE-8514-5FC3BAF40FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C97F7A-E4D0-44CE-8514-5FC3BAF40FDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

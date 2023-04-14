@@ -20,6 +20,7 @@ namespace BE_NET_2302.ADONET
             cmd.CommandType = System.Data.CommandType.Text;
             //Bước 3: hứng dữ liệu từ databas trả về vào sqlreader 
             var reader = cmd.ExecuteReader();
+            
             while (reader.Read())
             {
                 var product = new Product();

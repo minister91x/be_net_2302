@@ -15,7 +15,10 @@ namespace BE_NET_2302.Entities
             var initializer = new MigrateDatabaseToLatestVersion<ProductDbContext, Migrations.Configuration>();
             Database.SetInitializer(initializer);
         }
-        public virtual DbSet<Product> product { get; set; }
-        public virtual DbSet<Orders> order { get; set; }
+      //  public virtual DbSet<Product> product { get; set; }
+      //  public virtual DbSet<Orders> order { get; set; }
+        public virtual DbSet<Student> student { get; set; }
+        public virtual DbSet<Grade> grade { get; set; }
+
     }
 }

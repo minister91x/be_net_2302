@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\DataAccess.QLBanHang.dll.config
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\DataAccess.QLBanHang.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.csproj.CopyComplete
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.pdb

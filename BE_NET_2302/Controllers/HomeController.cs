@@ -1,5 +1,7 @@
 ﻿using BE_NET_2302.ADONET;
 using BE_NET_2302.Entities;
+using BE2302.DataAccess.QLBanHang.DAL;
+using BE2302.DataAccess.QLBanHang.DO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +27,22 @@ namespace BE_NET_2302.Controllers
                 //    OrderDate = DateTime.Now
                 //};
 
-                //context.product.Add(product);
-                //context.order.Add(order);
-                //var result = context.SaveChanges();
+                var student = new Student();
+                student.Name = "Quan";
+                context.student.Add(student);
+
+                var result = context.SaveChanges();
 
                 ///var listproduct = context.product.ToList();
                 ///
                 var productManager = new ProductManager();
                 var list = productManager.GetProducts();
+
+                var contextNhanVien = new NhanVienRepository();
+                var nhanvien = new NHANVIEN();
+                var result_create = contextNhanVien.Nhanvien_Themmoi(nhanvien);
+
+
 
             }
             catch (Exception ex)

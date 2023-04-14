@@ -9,8 +9,8 @@
     {
         public Configuration()
         {
+            AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
-            ContextKey = "BE_NET_2302.Entities.ProductDbContext";
         }
 
         protected override void Seed(BE_NET_2302.Entities.ProductDbContext context)
