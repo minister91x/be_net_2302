@@ -81,3 +81,6 @@ C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\EntityFramework.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\EntityFramework.SqlServer.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\EntityFramework.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\DataAccess.QLBanHang.dll
+C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\DataAccess.QLBanHang.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\DataAccess.QLBanHang.dll.config

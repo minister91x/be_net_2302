@@ -40,6 +40,10 @@ namespace BE_NET_2302.Controllers
 
                 var contextNhanVien = new NhanVienRepository();
                 var nhanvien = new NHANVIEN();
+                nhanvien.MaNV = "NV1";
+                nhanvien.TenNV = "NGUYEN TRONG QUAN";
+                nhanvien.DienThoai = "0372112900";
+                nhanvien.NgaySinh = DateTime.Now;
                 var result_create = contextNhanVien.Nhanvien_Themmoi(nhanvien);
 
 
