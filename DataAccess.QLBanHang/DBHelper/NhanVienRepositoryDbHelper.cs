@@ -26,7 +26,6 @@ namespace DataAccess.QLBanHang.DBHelper
             var reader = cmd2.ExecuteReader();
             while (reader.Read())
             {
-
                 var nhanvien = new NHANVIEN();
                 nhanvien.MaNV = reader["MaNV"] != null ? reader["MaNV"].ToString() : "";
                 nhanvien.TenNV = reader["TenNV"] != null ? reader["TenNV"].ToString() : "";

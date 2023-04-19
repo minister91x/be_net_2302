@@ -27,8 +27,25 @@ namespace BE_NET_2302.Controllers
                 nhanVien.TenNV = "Mr Quân 12";
                 nhanVien.NgaySinh = DateTime.Now;
                 nhanVien.DiaChi = "Hà Nội";
+
+                var sanpham = new SANPHAM();
+                sanpham.MaSP = "SP1";
+                sanpham.DonGia = 10000;
+
+
+                var hoadon = new HOADON();
+                hoadon.MaNV = "NV1";
+                hoadon.MaKH = "KH1";
+
+                var hoadonchitiet = new CHITIETHD();
+                hoadonchitiet.ID = 1;
+                hoadonchitiet.MaSP = sanpham;
+                hoadonchitiet.MaHD = hoadon;
+
+
+
                 //repos.Nhanvien_Themmoi(nhanVien);
-                repos_adoNet.Nhanvien_Themmoi(nhanVien);
+                //  repos_adoNet.Nhanvien_Themmoi(nhanVien);
 
                 var lst= dbConect.nhanvien.ToList();
 
