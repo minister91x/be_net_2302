@@ -9,7 +9,8 @@ namespace BE2302.DataAccess.QLBanHang.DO
 {
     public class NHANVIEN
     {
-     [Key]    
+    
+    [Key]
     public string MaNV { get; set; }
     public string HoNV { get; set; }
     public string TenNV { get; set; }

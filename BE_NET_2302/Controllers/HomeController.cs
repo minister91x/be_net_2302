@@ -2,6 +2,7 @@
 using BE_NET_2302.Entities;
 using BE2302.DataAccess.QLBanHang.DAL;
 using BE2302.DataAccess.QLBanHang.DO;
+using DataAccess.QLBanHang.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,35 +17,23 @@ namespace BE_NET_2302.Controllers
         {
             try
             {
-                var context = new ProductDbContext();
-                //var product = new Product();
-                //product.Name = "Iphone 15";
-                //product.Price = 100000000;
-                //product.Quantity = 100;
 
-                //var order = new Orders { OrderId = "HD_02", ProductId = 1, Quantity = 10,
-                //    OrderTotal = 1000,
-                //    OrderDate = DateTime.Now
-                //};
+                var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
+                var repos = new NhanVienRepository();
+                var repos_adoNet = new NhanVienRepositoryADO_NET();
 
-                var student = new Student();
-                student.Name = "Quan";
-                context.student.Add(student);
+                var nhanVien = new NHANVIEN();
+                nhanVien.MaNV = Guid.NewGuid().ToString();
+                nhanVien.TenNV = "Mr Quân 12";
+                nhanVien.NgaySinh = DateTime.Now;
+                nhanVien.DiaChi = "Hà Nội";
+                //repos.Nhanvien_Themmoi(nhanVien);
+                repos_adoNet.Nhanvien_Themmoi(nhanVien);
 
-                var result = context.SaveChanges();
+                var lst= dbConect.nhanvien.ToList();
 
-                ///var listproduct = context.product.ToList();
-                ///
-                var productManager = new ProductManager();
-                var list = productManager.GetProducts();
-
-                var contextNhanVien = new NhanVienRepository();
-                var nhanvien = new NHANVIEN();
-                nhanvien.MaNV = "NV1";
-                nhanvien.TenNV = "NGUYEN TRONG QUAN";
-                nhanvien.DienThoai = "0372112900";
-                nhanvien.NgaySinh = DateTime.Now;
-                var result_create = contextNhanVien.Nhanvien_Themmoi(nhanvien);
+               
+                var lst_adoNet = repos_adoNet.Nhanvien_DanhSach();
 
 
 
