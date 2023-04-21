@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model List<WebApplicationDemo.Models.ProductModels>
+@{ 
+    var dateTime = DateTime.Now;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td><a href="/chi-tiet-@item.Name-@item.Id">@item.Id<a></td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+
+        }
+
+    </tbody>
+
+    
+</table>
+<p>@dateTime</p>
