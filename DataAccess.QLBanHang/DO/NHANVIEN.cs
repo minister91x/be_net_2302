@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE2302.DataAccess.QLBanHang.DO
+namespace DataAccess.QLBanHang.DO
 {
     public class NHANVIEN
     {

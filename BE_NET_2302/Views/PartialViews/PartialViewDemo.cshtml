@@ -1,0 +1,57 @@
+﻿@model List<DataAccess.QLBanHang.DO.NHANVIEN>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>MaNV</th>
+            <th>TenNV</th>
+            <th>DiaChi</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaNV</td>
+                    <td>@item.TenNV</td>
+                    <td>@item.DiaChi</td>
+                    <td><a style="cursor:pointer;" onclick="Employee_Remove('@item.MaNV')">Xóa</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script>
+    function Employee_Remove(ma_nv) {
+
+        var result = confirm("Bạn có chắc chắn muốn xóa ?")
+        if (result) {
+            var inputdata = {
+                MaNV: ma_nv
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: "Home/NhanVien_Remove",
+                data: inputdata,
+                success: function (data) {
+
+                    var code = data.ResponseCode;
+                    if (code > 0) {
+                        GetAllData();
+                    }
+
+                    alert(data.ResponseMessenger);
+
+                },
+                error: function (data) {
+                    console.log("error:" + JSON.stringify(data));
+                }
+            });
+        }
+    }
+</script>

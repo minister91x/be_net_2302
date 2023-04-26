@@ -1,31 +1,103 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    var datetime = DateTime.Now.Ticks;
+    var nv = new DataAccess.QLBanHang.DAL.NhanVienRepositoryADO_NET();
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container">
+    <div class="form-group">
+        <label for="usr">Mã Nhân viên:</label>
+        <input type="text" class="form-control" id="txtMaNV">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Tên Nhân Viên:</label>
+        <input type="text" class="form-control" id="txtTenNv">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Địa chỉ:</label>
+        <input type="text" class="form-control" id="txtAddress">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success" id="btnSave"> <i class="fa fa-save"></i>Thêm</button>
+    </div>
 </div>
+<p>Danh sách Nhân viên</p>
+@*@Html.Action("PartialViewDemo", "Home")*@
+<div id="lst-employee"></div>
+@*@Html.Action("Login", "Home")
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    @Html.Partial("~/Views/PartialViews/StaticPartialViews.cshtml")*@
+<script>
+
+    $(document).ready(function () {
+        GetAllData();
+       
+
+        $("#btnSave").click(function () {
+            Save();
+        });
+    });
+
+    function Save() {
+        var manv = $("#txtMaNV").val();
+        var ten_nv = $("#txtTenNv").val();
+        var address = $("#txtAddress").val();
+
+        var inputdata = {
+            MaNV: manv,
+            TenNV: ten_nv,
+            DiaChi: address
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: "Home/NhanVien_Insert",
+            data: inputdata,
+            success: function (data) {
+
+                var code = data.ResponseCode;
+                if (code > 0) {
+                    GetAllData();
+                }
+
+                alert(data.ResponseMessenger);
+
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+
+    }
+
+    function GetAllData() {
+        $.ajax({
+            type: 'GET',
+            url: "Home/PartialViewDemo",
+            data: {},
+            success: function (data) {
+
+                $("#lst-employee").html(data);
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+
+    function GetAllData1() {
+        $.ajax({
+            type: 'GET',
+            url: "https://jsonplaceholder.typicode.com/todos/1",
+            data: {},
+            success: function (data) {
+                console.log("userId:" + data.userId);
+                console.log("title:" + data.title);
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+
+</script>

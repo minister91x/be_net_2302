@@ -1,8 +1,10 @@
 ﻿using BE_NET_2302.ADONET;
 using BE_NET_2302.Entities;
+using BE_NET_2302.Models;
 using BE2302.DataAccess.QLBanHang.DAL;
 using BE2302.DataAccess.QLBanHang.DO;
 using DataAccess.QLBanHang.DAL;
+using DataAccess.QLBanHang.DO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,46 +15,15 @@ namespace BE_NET_2302.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             try
             {
-
                 var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
                 var repos = new NhanVienRepository();
                 var repos_adoNet = new NhanVienRepositoryADO_NET();
-
-                var nhanVien = new NHANVIEN();
-                nhanVien.MaNV = Guid.NewGuid().ToString();
-                nhanVien.TenNV = "Mr Quân 12";
-                nhanVien.NgaySinh = DateTime.Now;
-                nhanVien.DiaChi = "Hà Nội";
-
-                var sanpham = new SANPHAM();
-                sanpham.MaSP = "SP1";
-                sanpham.DonGia = 10000;
-
-
-                var hoadon = new HOADON();
-                hoadon.MaNV = "NV1";
-                hoadon.MaKH = "KH1";
-
-                var hoadonchitiet = new CHITIETHD();
-                hoadonchitiet.ID = 1;
-                hoadonchitiet.MaSP = sanpham;
-                hoadonchitiet.MaHD = hoadon;
-
-
-
-                //repos.Nhanvien_Themmoi(nhanVien);
-                //  repos_adoNet.Nhanvien_Themmoi(nhanVien);
-
-                var lst= dbConect.nhanvien.ToList();
-
-               
                 var lst_adoNet = repos_adoNet.Nhanvien_DanhSach();
-
-
 
             }
             catch (Exception ex)
@@ -63,6 +34,9 @@ namespace BE_NET_2302.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        [HttpPost]
         public ActionResult About()
         {
             //Comment code
@@ -77,5 +51,61 @@ namespace BE_NET_2302.Controllers
 
             return View();
         }
+
+        public ActionResult PartialViewDemo()
+        {
+            var list_nhanvien = new List<NHANVIEN>();
+            try
+            {
+                var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
+                var repos = new NhanVienRepository();
+                var repos_adoNet = new NhanVienRepositoryADO_NET();
+                list_nhanvien = repos_adoNet.Nhanvien_DanhSach();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return PartialView("~/Views/PartialViews/PartialViewDemo.cshtml", list_nhanvien);
+        }
+
+        [HttpPost]
+        public JsonResult NhanVien_Insert(string MaNV, string TenNV, string DiaChi)
+        {
+            try
+            {
+                var model = new  ResponseData();
+                var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
+                var repos = new NhanVienRepository();
+                var nhanvien_insertReq = new NHANVIEN
+                {
+                    MaNV = MaNV,
+                    TenNV = TenNV,
+                    DiaChi = DiaChi,
+                    NgaySinh = DateTime.Now
+                };
+
+                var result = repos.Nhanvien_Themmoi(nhanvien_insertReq);
+                if (result < 0)
+                {
+                    model.ResponseCode = -1;
+                    model.ResponseMessenger = "Thêm mới nhân viên thất bại";
+                    return Json(model, JsonRequestBehavior.AllowGet);
+                }
+
+                model.ResponseCode = 1;
+                model.ResponseMessenger = "Thêm mới nhân viên thành công";
+                return Json(model, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public ActionResult Login() { return View(); }
     }
 }

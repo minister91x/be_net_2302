@@ -1,6 +1,7 @@
 ﻿using BE2302.DataAccess.QLBanHang.DAO;
 using BE2302.DataAccess.QLBanHang.DO;
 using DataAccess.QLBanHang;
+using DataAccess.QLBanHang.DO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
