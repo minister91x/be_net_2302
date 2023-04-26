@@ -36,9 +36,15 @@ namespace BE2302.DataAccess.QLBanHang.DAL
            return dbcontext.SaveChanges();
         }
 
-        public int Nhanvien_update(int ID)
+        public int Nhanvien_update(NHANVIEN nhanvien)
         {
-            throw new NotImplementedException();
+            var nhanvien_remove = dbcontext.nhanvien.ToList().FindAll(s => s.MaNV == nhanvien.MaNV).FirstOrDefault();
+            if (nhanvien_remove != null)
+            {
+               // xư lý gán lại dữ liệu
+            }
+
+            return dbcontext.SaveChanges();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DataAccess.QLBanHang.DAL
             return helper.NhanVien_Insert(nhanvien);
         }
 
-        public int Nhanvien_update(int ID)
+        public int Nhanvien_update(NHANVIEN nhanvien)
         {
             throw new NotImplementedException();
         }

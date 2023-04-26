@@ -106,6 +106,42 @@ namespace BE_NET_2302.Controllers
             }
         }
 
+
+        [HttpPost]
+        public JsonResult NhanVien_Update(string MaNV, string TenNV, string DiaChi)
+        {
+            try
+            {
+                var model = new ResponseData();
+                var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
+                var repos = new NhanVienRepository();
+                var nhanvien_insertReq = new NHANVIEN
+                {
+                    MaNV = MaNV,
+                    TenNV = TenNV,
+                    DiaChi = DiaChi,
+                    NgaySinh = DateTime.Now
+                };
+
+                var result = repos.Nhanvien_update(nhanvien_insertReq);
+                if (result < 0)
+                {
+                    model.ResponseCode = -1;
+                    model.ResponseMessenger = "Thêm mới nhân viên thất bại";
+                    return Json(model, JsonRequestBehavior.AllowGet);
+                }
+
+                model.ResponseCode = 1;
+                model.ResponseMessenger = "Thêm mới nhân viên thành công";
+                return Json(model, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
         public ActionResult Login() { return View(); }
     }
 }

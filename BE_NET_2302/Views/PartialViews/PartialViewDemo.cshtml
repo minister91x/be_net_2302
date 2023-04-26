@@ -6,7 +6,10 @@
             <th>MaNV</th>
             <th>TenNV</th>
             <th>DiaChi</th>
-            <th>Hành động</th>
+            <th>
+                Hành động
+                <a style="cursor:pointer;" onclick="Employee_Remove()">Xóa</a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -15,10 +18,13 @@
             foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.MaNV</td>
+                    <td> <a style="cursor:pointer" onclick="ShowDetail('@item.MaNV','@item.TenNV','@item.DiaChi')">@item.MaNV</a></td>
                     <td>@item.TenNV</td>
                     <td>@item.DiaChi</td>
-                    <td><a style="cursor:pointer;" onclick="Employee_Remove('@item.MaNV')">Xóa</a></td>
+                    <td>
+
+                        <input type="checkbox" class="chk_check_delete" id="chk_@item.MaNV" />
+                    </td>
                 </tr>
             }
         }
@@ -26,32 +32,59 @@
 </table>
 
 <script>
-    function Employee_Remove(ma_nv) {
 
-        var result = confirm("Bạn có chắc chắn muốn xóa ?")
+    function ShowDetail(ma_nv, ten_nv, diachi) {
+
+        $("#txtMaNV").prop('disabled', true);
+
+        $("#txtMaNV").val(ma_nv);
+        $("#txtTenNv").val(ten_nv);
+        $("#txtAddress").val(diachi);
+    }
+
+    function Employee_Remove_All() {
+
+        var result = confirm("Bạn có chắc chắn muốn xóa");
+
         if (result) {
-            var inputdata = {
-                MaNV: ma_nv
-            };
 
-            $.ajax({
-                type: 'POST',
-                url: "Home/NhanVien_Remove",
-                data: inputdata,
-                success: function (data) {
-
-                    var code = data.ResponseCode;
-                    if (code > 0) {
-                        GetAllData();
-                    }
-
-                    alert(data.ResponseMessenger);
-
-                },
-                error: function (data) {
-                    console.log("error:" + JSON.stringify(data));
+            $(".table .chk_check_delete").each(function (key, value) {
+                var item = value.id;
+                var ischeck = $('#' + item).is(":checked") ? 1 : 0;
+                if (ischeck == 1) {
+                    var ma_nv = item.split('_')[1];
+                    Employee_Remove(ma_nv)
                 }
             });
         }
+
+    }
+
+    function Employee_Remove(MaNV) {
+
+
+        var inputdata = {
+            MaNV: ""
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: "Home/NhanVien_Remove",
+            data: inputdata,
+            success: function (data) {
+
+                var code = data.ResponseCode;
+                if (code > 0) {
+                    GetAllData();
+                }
+
+                alert(data.ResponseMessenger);
+
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+
     }
 </script>
