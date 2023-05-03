@@ -32,13 +32,13 @@
 
     $(document).ready(function () {
         GetAllData();
-       
+
 
         $("#btnSave").click(function () {
-            $("#txtMaNV").val('');
-            $("#txtTenNv").val('');
-            $("#txtAddress").val('');
-            $("#txtMaNV").prop('disabled', false);
+            //  $("#txtMaNV").val('');
+            //  $("#txtTenNv").val('');
+            //  $("#txtAddress").val('');
+            //  $("#txtMaNV").prop('disabled', false);
             Save();
         });
 
@@ -53,16 +53,23 @@
         var ten_nv = $("#txtTenNv").val();
         var address = $("#txtAddress").val();
 
+        if (!ValidateData("txtMaNV")) {
+            alert("dữ lieuj không hợp lệ");
+            return;
+        }
+
         var inputdata = {
             MaNV: manv,
             TenNV: ten_nv,
-            DiaChi: address
+            DiaChi: address,
+            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val(),
         };
 
         $.ajax({
             type: 'POST',
-            url: "Home/NhanVien_Insert",
-            data: inputdata,
+            url: "/Home/NhanVien_Insert",
+            data: JSON.stringify(inputdata),
+            contentType: "application/json",
             success: function (data) {
 
                 var code = data.ResponseCode;
@@ -80,6 +87,19 @@
 
     }
 
+    function ValidateData(id) {
+        var data = $("#" + id).val();
+        if (data == null) {
+            $("#" + id).css("border", "1px solid red");
+
+            return false;
+        } else {
+            $("#" + id).css("border", "");
+        }
+
+        return true;
+    }
+
     function Update() {
         var manv = $("#txtMaNV").val();
         var ten_nv = $("#txtTenNv").val();
@@ -95,6 +115,7 @@
             type: 'POST',
             url: "Home/NhanVien_Insert",
             data: inputdata,
+            contentType: "application/json",
             success: function (data) {
 
                 var code = data.ResponseCode;

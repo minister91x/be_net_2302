@@ -1,4 +1,5 @@
-﻿using BE_NET_2302.ADONET;
+﻿using AutoMapper;
+using BE_NET_2302.ADONET;
 using BE_NET_2302.Entities;
 using BE_NET_2302.Models;
 using BE2302.DataAccess.QLBanHang.DAL;
@@ -20,6 +21,7 @@ namespace BE_NET_2302.Controllers
         {
             try
             {
+
                 var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
                 var repos = new NhanVienRepository();
                 var repos_adoNet = new NhanVienRepositoryADO_NET();
@@ -72,18 +74,47 @@ namespace BE_NET_2302.Controllers
         }
 
         [HttpPost]
-        public JsonResult NhanVien_Insert(string MaNV, string TenNV, string DiaChi)
+        [ValidateAntiForgeryToken]
+        public JsonResult NhanVien_Insert(EmployeeRegisterModels inputdata)
         {
+            var model = new ResponseData();
             try
             {
-                var model = new  ResponseData();
+                if (!ModelState.IsValid)
+                {
+
+                }
+
+                // kiểm tra về mặt dữ liệu
+                if (inputdata == null
+                    || string.IsNullOrEmpty(inputdata.TenNV))
+                {
+                    model.ResponseCode = -99;
+                    model.ResponseMessenger = "Thêm mới nhân viên thất bại";
+                    return Json(model, JsonRequestBehavior.AllowGet);
+                }
+
+                // Kiểm tra bảo mật
+
+                if (!CheckXSSInput(inputdata.TenNV))
+                {
+                    model.ResponseCode = -999;
+                    model.ResponseMessenger = "Dữ liệu không hợp lệ";
+                    return Json(model, JsonRequestBehavior.AllowGet);
+                }
+
+
+
+
                 var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
                 var repos = new NhanVienRepository();
+
+
                 var nhanvien_insertReq = new NHANVIEN
                 {
-                    MaNV = MaNV,
-                    TenNV = TenNV,
-                    DiaChi = DiaChi,
+                    MaNV = inputdata.MaNV,
+                    TenNV = inputdata.TenNV,
+                    DiaChi = inputdata.DiaChi,
                     NgaySinh = DateTime.Now
                 };
 
@@ -143,5 +174,24 @@ namespace BE_NET_2302.Controllers
         }
 
         public ActionResult Login() { return View(); }
+
+        public static bool CheckXSSInput(string input)
+        {
+            try
+            {
+                var listdangerousString = new List<string> { "<applet", "<body", "<embed", "<frame", "<script", "<frameset", "<html", "<iframe", "<img", "<style", "<layer", "<link", "<ilayer", "<meta", "<object", "<h", "<input", "<a", "&lt", "&gt" };
+                if (string.IsNullOrEmpty(input)) return false;
+                foreach (var dangerous in listdangerousString)
+                {
+                    if (input.Trim().ToLower().IndexOf(dangerous) >= 0) return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -16,6 +16,8 @@ namespace BE2302.DataAccess.QLBanHang.DAL
 
         public List<NHANVIEN> Nhanvien_DanhSach()
         {
+          
+           
           return  dbcontext.nhanvien.ToList();
         }
 

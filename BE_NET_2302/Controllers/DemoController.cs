@@ -14,6 +14,7 @@ namespace BE_NET_2302.Controllers
         public ActionResult Index(int? a)
         {
            
+           
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
