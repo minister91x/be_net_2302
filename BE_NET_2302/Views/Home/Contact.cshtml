@@ -1,19 +1,28 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿
+@{
+    ViewBag.Title = "About";
+
+        ViewBag.Title = "Home Page";
+        var datetime = DateTime.Now.Ticks;
+        var nv = new DataAccess.QLBanHang.DAL.NhanVienRepositoryADO_NET();
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    <div class="content-wrapper" style="min-height: 1604.44px;">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container">
+                            @Html.Action("PartialViewDemo", "Home")
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
 
-@Html.Action("PartialViewDemo", "Home")
+
+
+

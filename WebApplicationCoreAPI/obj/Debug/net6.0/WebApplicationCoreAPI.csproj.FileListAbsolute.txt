@@ -25,3 +25,5 @@ C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\r
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\WebApplicationCoreAPI.pdb
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\WebApplicationCoreAPI.genruntimeconfig.cache
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\ref\WebApplicationCoreAPI.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\WebApplicationCoreAPI.xml
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\WebApplicationCoreAPI.xml

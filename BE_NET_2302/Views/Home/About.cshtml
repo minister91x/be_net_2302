@@ -1,7 +1,33 @@
 ﻿@{
     ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+    @{
+        ViewBag.Title = "Home Page";
+        var datetime = DateTime.Now.Ticks;
+        var nv = new DataAccess.QLBanHang.DAL.NhanVienRepositoryADO_NET();
+    }
 
-<p>Use this area to provide additional information.</p>
+    <div class="content-wrapper" style="min-height: 1604.44px;">
+      
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="callout callout-info">
+                            <h5><i class="fas fa-info"></i> Note:</h5>
+                            This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                        </div>
+
+                        <div class="container">
+                          <p>Đây là trang about</p>
+                        <!-- Main content -->
+                        <!-- /.invoice -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+
+
+   

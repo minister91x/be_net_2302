@@ -1,3 +1,5 @@
+using WebApplicationWebCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +12,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -17,5 +21,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseMiddleware<CustomeMiddleware>();
 
 app.Run();

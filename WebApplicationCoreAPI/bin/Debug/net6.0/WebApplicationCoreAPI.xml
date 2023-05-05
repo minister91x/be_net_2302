@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplicationCoreAPI</name>
+    </assembly>
+    <members>
+        <member name="P:WebApplicationCoreAPI.GetTextInputRequest.Text">
+            <summary>
+            Trường này là điển nội dung muốn hiển thị
+            </summary>
+        </member>
+    </members>
+</doc>

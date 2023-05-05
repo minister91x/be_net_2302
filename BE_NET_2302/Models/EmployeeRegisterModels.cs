@@ -13,5 +13,7 @@ namespace BE_NET_2302.Models
         public string MaNV { get; set; }
         public string TenNV { get; set; }
         public string DiaChi { get; set; }
+
+        public string ProductImage { get; set; }
     }
 }

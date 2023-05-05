@@ -21,11 +21,18 @@ namespace BE_NET_2302.Controllers
         {
             try
             {
+                // kiểm tra xem người dùng đăng nhập chưa 
+                //Session.Add("UserLogin", 1);
+                var sessionLogin = Session["UserLogin"] != null ? Session["UserLogin"].ToString() : string.Empty;
+                if (string.IsNullOrEmpty(sessionLogin)) 
+                {
+                    return RedirectToAction("Login", "Account");
+                }
 
-                var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
-                var repos = new NhanVienRepository();
-                var repos_adoNet = new NhanVienRepositoryADO_NET();
-                var lst_adoNet = repos_adoNet.Nhanvien_DanhSach();
+                //var dbConect = new DataAccess.QLBanHang.QuanlyNhanVienDBContext();
+                //var repos = new NhanVienRepository();
+                //var repos_adoNet = new NhanVienRepositoryADO_NET();
+                //var lst_adoNet = repos_adoNet.Nhanvien_DanhSach();
 
             }
             catch (Exception ex)
@@ -85,6 +92,7 @@ namespace BE_NET_2302.Controllers
 
                 }
 
+                
                 // kiểm tra về mặt dữ liệu
                 if (inputdata == null
                     || string.IsNullOrEmpty(inputdata.TenNV))

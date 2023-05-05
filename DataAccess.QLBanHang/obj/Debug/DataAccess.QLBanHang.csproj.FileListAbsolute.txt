@@ -10,3 +10,6 @@ C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\EntityFra
 C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.csproj.CopyComplete
 C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.dll
 C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\obj\Debug\DataAccess.QLBanHang.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\AutoMapper.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\AutoMapper.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.QLBanHang\bin\Debug\AutoMapper.xml
