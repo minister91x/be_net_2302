@@ -27,3 +27,7 @@ C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\W
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\ref\WebApplicationCoreAPI.dll
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\WebApplicationCoreAPI.xml
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\obj\Debug\net6.0\WebApplicationCoreAPI.xml
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\DataAccess.DependencyInjection.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\DataAccess.DependencyInjection.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCoreAPI\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.pdb

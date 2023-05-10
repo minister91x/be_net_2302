@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.deps.json
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\refint\DataAccess.DenpencyInjection.Models.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\DataAccess.DenpencyInjection.Models.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DenpencyInjection.Models\obj\Debug\net6.0\ref\DataAccess.DenpencyInjection.Models.dll

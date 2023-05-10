@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\bin\Debug\net6.0\DataAccess.DependencyInjection.deps.json
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\bin\Debug\net6.0\DataAccess.DependencyInjection.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\bin\Debug\net6.0\DataAccess.DependencyInjection.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\bin\Debug\net6.0\DataAccess.DenpencyInjection.Models.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.csproj.CopyComplete
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\refint\DataAccess.DependencyInjection.dll
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\DataAccess.DependencyInjection.pdb
+C:\Users\Admin\source\repos\BE_NET_2302\DataAccess.DependencyInjection\obj\Debug\net6.0\ref\DataAccess.DependencyInjection.dll

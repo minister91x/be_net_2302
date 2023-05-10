@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccess.DependencyInjection.IServices;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationCoreAPI.Controllers
 {
@@ -6,14 +7,21 @@ namespace WebApplicationCoreAPI.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private readonly IProductServices _productServices;
+        private readonly IConfiguration _configuration;
+        public HomeController(IProductServices productServices, IConfiguration configuration)
+        {
+            _productServices = productServices;
+            _configuration = configuration;
+        }
+
+
         [HttpPost("GetStringData")]
         public async Task<ActionResult> GetStringData()
         {
-           
-            var list = new List<string>();
-            list.Add("LOP");
-            list.Add("BACKEND");
-            list.Add("BE 2203");
+            await Task.Yield();
+
+            var list = _productServices.GetProducts();
             return Ok(list);
         }
 

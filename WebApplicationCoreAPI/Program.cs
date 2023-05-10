@@ -1,3 +1,8 @@
+using DataAccess.DependencyInjection.Category.IServices;
+using DataAccess.DependencyInjection.Category.Services;
+using DataAccess.DependencyInjection.DbHelper;
+using DataAccess.DependencyInjection.IServices;
+using DataAccess.DependencyInjection.Services;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +33,11 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+
+builder.Services.AddTransient<IDbHelper, DBHelper>();
+builder.Services.AddTransient<IProductServices, ProductServices>();
+builder.Services.AddTransient<ICategoryServices, CategoryServices>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

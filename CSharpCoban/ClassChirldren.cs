@@ -8,6 +8,7 @@ namespace CSharpCoban
 {
     public class ClassChirldren : ClassParent
     {
+        
         public ClassChirldren()
         {
             Console.WriteLine("ClassChirldren");
