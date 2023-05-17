@@ -1,9 +1,14 @@
+using DataAccess.DependencyInjection.Account.IServices;
+using DataAccess.DependencyInjection.Account.Services;
 using DataAccess.DependencyInjection.Category.IServices;
 using DataAccess.DependencyInjection.Category.Services;
 using DataAccess.DependencyInjection.DbHelper;
 using DataAccess.DependencyInjection.IServices;
 using DataAccess.DependencyInjection.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,9 +39,25 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+
+
 builder.Services.AddTransient<IDbHelper, DBHelper>();
 builder.Services.AddTransient<IProductServices, ProductServices>();
 builder.Services.AddTransient<ICategoryServices, CategoryServices>();
+builder.Services.AddTransient<IAccountServices, AccountServices>();
 
 var app = builder.Build();
 

@@ -24,9 +24,14 @@ namespace DataAccess.DependencyInjection.Services
         {
             try
             {
-                var parameters = new DynamicParameters();
-                var rersult = await ReadDbConnection.QueryAsync<Product>("SP_Country_GetList", parameters);
-                return rersult;
+                //var parameters = new DynamicParameters();
+                //var rersult = await ReadDbConnection.QueryAsync<Product>("SP_Country_GetList", parameters);
+                //return rersult;
+
+                var lst= new List<Product>();
+                lst.Add(new Product { Id = 1, Name = "Sản phẩm 1" });
+                return lst;
+
             }
             catch (Exception ex)
             {

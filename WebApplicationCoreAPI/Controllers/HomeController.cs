@@ -1,5 +1,7 @@
 ﻿using DataAccess.DependencyInjection.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApplicationCoreAPI.Helper;
 
 namespace WebApplicationCoreAPI.Controllers
 {
@@ -17,11 +19,12 @@ namespace WebApplicationCoreAPI.Controllers
 
 
         [HttpPost("GetStringData")]
+        [AuthorizeDemo()]
         public async Task<ActionResult> GetStringData()
         {
             await Task.Yield();
 
-            var list = _productServices.GetProducts();
+            var list = await _productServices.GetProducts();
             return Ok(list);
         }
 
