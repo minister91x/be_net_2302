@@ -13,9 +13,9 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="../../index3.html" method="post">
+           
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="text" id="txtUserName" class="form-control" placeholder="Email">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" id="txtPassord" class="form-control" placeholder="Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -41,11 +41,11 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="button"  onclick="Login()" class="btn btn-primary btn-block">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
-            </form>
+           
 
             <div class="social-auth-links text-center mb-3">
                 <p>- OR -</p>
@@ -69,3 +69,34 @@
     </div>
 </div>
 
+<script>
+    function Login() {
+
+        var inputdata = {
+            UserName: $("#txtUserName").val(),
+            Password: $("#txtPassord").val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: "/Account/Account_Login",
+            data: JSON.stringify(inputdata),
+            contentType: "application/json",
+            dataType:"json",
+            success: function (data) {
+
+                var code = data.ResponseCode;
+                if (code > 0) {
+                    Common.setCookie("BE_2203_Cookies", data.ResponseMessage, 1);
+                }
+                alert(data.ResponseMessage);
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+
+    }
+
+  
+</script>

@@ -91,14 +91,11 @@ C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\Microsoft.Extensions.Opt
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\Microsoft.Extensions.Primitives.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Buffers.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.ComponentModel.Annotations.dll
-C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Memory.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Numerics.Vectors.dll
-C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\AutoMapper.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\Microsoft.Extensions.Options.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\Microsoft.Extensions.Primitives.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Buffers.xml
-C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Memory.xml
 C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Numerics.Vectors.xml
-C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\source\repos\BE_NET_2302\BE_NET_2302\bin\RestSharp.dll

@@ -12,9 +12,9 @@ namespace WebApplicationCoreAPI.Helper
 
     public class DemoAuthorizeActionFilter : IAsyncAuthorizationFilter
     {
-        public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
+        public Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
-            var identity = context.HttpContext.User.Identity as ClaimsIdentity;
+            var identity =  context.HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
                 var userClaims = identity.Claims;
@@ -27,6 +27,8 @@ namespace WebApplicationCoreAPI.Helper
                 }
 
             }
+
+            return Task.CompletedTask;
         }
     }
 
