@@ -1,6 +1,7 @@
 ﻿using DataAccess.DependencyInjection.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UnitOfWork.DataAccess.DbContext;
 using WebApplicationCoreAPI.Helper;
 
 namespace WebApplicationCoreAPI.Controllers
@@ -24,8 +25,13 @@ namespace WebApplicationCoreAPI.Controllers
         {
             await Task.Yield();
 
-            var list = await _productServices.GetProducts();
-            return Ok(list);
+            // var list = await _productServices.GetProducts();
+
+            var unitOfwork = new UnitOfWork.DataAccess.UnitOfWork.MyShopUnitOfWork(new MyShopUnitOfWorkDbContext());
+
+            unitOfwork.ProductRepos.Product_GetAll();
+
+            return Ok();
         }
 
         [HttpPost("GetText")]

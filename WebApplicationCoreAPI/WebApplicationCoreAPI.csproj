@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccess.DependencyInjection\DataAccess.DependencyInjection.csproj" />
+    <ProjectReference Include="..\UnitOfWork.DataAccess\UnitOfWork.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
