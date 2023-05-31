@@ -6,13 +6,22 @@ using DataAccess.DependencyInjection.DbHelper;
 using DataAccess.DependencyInjection.IServices;
 using DataAccess.DependencyInjection.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using UnitOfWork.DataAccess.DbContext;
+using UnitOfWork.DataAccess.Interface;
+using UnitOfWork.DataAccess.Repository;
+using UnitOfWork.DataAccess.UnitOfWork;
+using WebApplicationCoreAPI.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
+builder.Services.AddDbContext<MyShopUnitOfWorkDbContext>(options =>
+               options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
+              
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -62,10 +71,12 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-builder.Services.AddTransient<IDbHelper, DBHelper>();
-builder.Services.AddTransient<IProductServices, ProductServices>();
-builder.Services.AddTransient<ICategoryServices, CategoryServices>();
-builder.Services.AddTransient<IAccountServices, AccountServices>();
+//builder.Services.AddTransient<IDbHelper, DBHelper>();
+//builder.Services.AddTransient<IProductServices, ProductServices>();
+//builder.Services.AddTransient<ICategoryServices, CategoryServices>();
+//builder.Services.AddTransient<IAccountServices, AccountServices>();
+builder.Services.AddScoped<IUnitOfWork, MyShopUnitOfWork>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

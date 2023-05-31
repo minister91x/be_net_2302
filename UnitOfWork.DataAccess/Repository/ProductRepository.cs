@@ -11,7 +11,7 @@ namespace UnitOfWork.DataAccess.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        MyShopUnitOfWorkDbContext context = new MyShopUnitOfWorkDbContext();
+       // MyShopUnitOfWorkDbContext context = new();
         public SANPHAM GetProductById(int id)
         {
             throw new NotImplementedException();

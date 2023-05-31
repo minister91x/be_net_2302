@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UnitOfWork.DataAccess.DbContext;
+using UnitOfWork.DataAccess.UnitOfWork;
 using WebApplicationCoreAPI.Helper;
+using WebApplicationCoreAPI.UnitOfWork;
 
 namespace WebApplicationCoreAPI.Controllers
 {
@@ -12,10 +14,12 @@ namespace WebApplicationCoreAPI.Controllers
     {
         private readonly IProductServices _productServices;
         private readonly IConfiguration _configuration;
-        public HomeController(IProductServices productServices, IConfiguration configuration)
+        private readonly IUnitOfWork _unitOfWork;
+        public HomeController(IProductServices productServices, IConfiguration configuration, IUnitOfWork unitOfWork)
         {
             _productServices = productServices;
             _configuration = configuration;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -27,9 +31,9 @@ namespace WebApplicationCoreAPI.Controllers
 
             // var list = await _productServices.GetProducts();
 
-            var unitOfwork = new UnitOfWork.DataAccess.UnitOfWork.MyShopUnitOfWork(new MyShopUnitOfWorkDbContext());
+            _unitOfWork.Products.Product_GetAll();
 
-            unitOfwork.ProductRepos.Product_GetAll();
+          //  unitOfwork.ProductRepos.Product_GetAll();
 
             return Ok();
         }
