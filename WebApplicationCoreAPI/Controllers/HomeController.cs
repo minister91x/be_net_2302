@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UnitOfWork.DataAccess.DbContext;
+using UnitOfWork.DataAccess.Entities;
 using UnitOfWork.DataAccess.UnitOfWork;
 using WebApplicationCoreAPI.Helper;
 using WebApplicationCoreAPI.UnitOfWork;
@@ -32,8 +33,9 @@ namespace WebApplicationCoreAPI.Controllers
             // var list = await _productServices.GetProducts();
 
             _unitOfWork.Products.Product_GetAll();
-
-          //  unitOfwork.ProductRepos.Product_GetAll();
+            _unitOfWork.employeer.Employeer_Insert(new NHANVIEN { DiaChi = "" });
+            _unitOfWork.Save();
+            //  unitOfwork.ProductRepos.Product_GetAll();
 
             return Ok();
         }
