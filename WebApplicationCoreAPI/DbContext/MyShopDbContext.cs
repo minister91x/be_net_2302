@@ -14,8 +14,8 @@ namespace UnitOfWork.DataAccess.DbContext
         {
         }
         protected override void OnModelCreating(ModelBuilder builder) { base.OnModelCreating(builder); }
-        public DbSet<SANPHAM> sanpham { get; set; }
-        public DbSet<HOADON> hoadon { get; set; }
-        public DbSet<NHANVIEN> nhanvien { get; set; }
+        public DbSet<SANPHAM>? sanpham { get; set; }
+        public DbSet<HOADON>? hoadon { get; set; }
+        public DbSet<NHANVIEN>? nhanvien { get; set; }
     }
 }

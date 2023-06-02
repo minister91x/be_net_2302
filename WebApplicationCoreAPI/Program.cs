@@ -14,6 +14,8 @@ using UnitOfWork.DataAccess.DbContext;
 using UnitOfWork.DataAccess.Interface;
 using UnitOfWork.DataAccess.Repository;
 using UnitOfWork.DataAccess.UnitOfWork;
+using WebApplicationCoreAPI.Interface;
+using WebApplicationCoreAPI.Repository;
 using WebApplicationCoreAPI.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -75,8 +77,10 @@ builder.Services.AddAuthentication(options =>
 //builder.Services.AddTransient<IProductServices, ProductServices>();
 //builder.Services.AddTransient<ICategoryServices, CategoryServices>();
 //builder.Services.AddTransient<IAccountServices, AccountServices>();
-builder.Services.AddScoped<IUnitOfWork, MyShopUnitOfWork>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddTransient<IUnitOfWork, MyShopUnitOfWork>();
+//builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
 
 var app = builder.Build();
 

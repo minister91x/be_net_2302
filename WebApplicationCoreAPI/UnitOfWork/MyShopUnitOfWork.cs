@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitOfWork.DataAccess.DbContext;
+using UnitOfWork.DataAccess.Interface;
 using UnitOfWork.DataAccess.Repository;
 using WebApplicationCoreAPI.UnitOfWork;
 
@@ -12,15 +13,16 @@ namespace UnitOfWork.DataAccess.UnitOfWork
     public class MyShopUnitOfWork : IUnitOfWork
     {
         private readonly MyShopUnitOfWorkDbContext _dbContext;
-        public ProductRepository Products { get; }
+        //public ProductRepository _products { get; }
 
-        public EmployeerRepository employeer => throw new NotImplementedException();
+        public IEmployeerRepository _employeer { get; }
+
 
         public MyShopUnitOfWork(MyShopUnitOfWorkDbContext dbContext,
-                            ProductRepository productRepository)
+                            IEmployeerRepository employeer)
         {
             _dbContext = dbContext;
-            Products = productRepository;
+            _employeer = employeer;
         }
 
         public int Save()

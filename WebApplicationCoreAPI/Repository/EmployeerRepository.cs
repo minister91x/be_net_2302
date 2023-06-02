@@ -14,44 +14,15 @@ namespace UnitOfWork.DataAccess.Repository
     {
         private readonly MyShopUnitOfWorkDbContext _context;
 
-        public void Add(NHANVIEN entity)
+        public EmployeerRepository(MyShopUnitOfWorkDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public void AddRange(IEnumerable<NHANVIEN> entities)
+       
+        public List<NHANVIEN> GetListNhanVien()
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<NHANVIEN> Find(Expression<Func<NHANVIEN, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<NHANVIEN> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public NHANVIEN GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(NHANVIEN entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveRange(IEnumerable<NHANVIEN> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(NHANVIEN entity)
-        {
-            throw new NotImplementedException();
+           return _context.nhanvien.ToList();
         }
     }
 }

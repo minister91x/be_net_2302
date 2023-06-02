@@ -8,8 +8,7 @@ using WebApplicationCoreAPI.Interface;
 
 namespace UnitOfWork.DataAccess.Interface
 {
-    public interface IEmployeerRepository
+    public interface IEmployeerRepositoryGeneric : IGenericRepository<NHANVIEN>
     {
-        public List<NHANVIEN> GetListNhanVien();
     }
 }

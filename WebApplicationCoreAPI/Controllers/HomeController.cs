@@ -13,31 +13,28 @@ namespace WebApplicationCoreAPI.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly IProductServices _productServices;
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _unitOfWork;
-        public HomeController(IProductServices productServices, IConfiguration configuration, IUnitOfWork unitOfWork)
+        public HomeController(IConfiguration configuration, IUnitOfWork unitOfWork)
         {
-            _productServices = productServices;
             _configuration = configuration;
             _unitOfWork = unitOfWork;
         }
 
 
         [HttpPost("GetStringData")]
-        [AuthorizeDemo()]
+        // [AuthorizeDemo()]
         public async Task<ActionResult> GetStringData()
         {
             await Task.Yield();
 
             // var list = await _productServices.GetProducts();
 
-            _unitOfWork.Products.Product_GetAll();
-            _unitOfWork.employeer.Employeer_Insert(new NHANVIEN { DiaChi = "" });
-            _unitOfWork.Save();
+            var list = _unitOfWork._employeer.GetListNhanVien();
+
             //  unitOfwork.ProductRepos.Product_GetAll();
 
-            return Ok();
+            return Ok(list);
         }
 
         [HttpPost("GetText")]

@@ -11,8 +11,53 @@ using WebApplicationCoreAPI.Repository;
 
 namespace UnitOfWork.DataAccess.Repository
 {
-    public class ProductRepository : GenericRepository<SANPHAM>, IProductRepository
+    public class ProductRepository : IProductRepository
     {
-        public ProductRepository(MyShopUnitOfWorkDbContext context) : base(context) { }
+        private readonly MyShopUnitOfWorkDbContext _context;
+
+        public ProductRepository(MyShopUnitOfWorkDbContext context)
+        {
+            _context = context;
+        }
+
+        public void Add(SANPHAM entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public void AddRange(IEnumerable<SANPHAM> entities)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public IEnumerable<SANPHAM> Find(Expression<Func<SANPHAM, bool>> expression)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public IEnumerable<SANPHAM> GetAll()
+        {
+            return _context.sanpham.ToList();
+        }
+
+        //public SANPHAM GetById(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Remove(SANPHAM entity)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void RemoveRange(IEnumerable<SANPHAM> entities)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Update(SANPHAM entity)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
