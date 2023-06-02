@@ -7,7 +7,7 @@ namespace WebApplicationCoreAPI.UnitOfWork
     {
         //ProductRepository _products { get; }
 
-       public IEmployeerRepository _employeer { get; }
+       public IEmployeerRepositoryGeneric _employeer { get; }
         int Save();
     }
 }

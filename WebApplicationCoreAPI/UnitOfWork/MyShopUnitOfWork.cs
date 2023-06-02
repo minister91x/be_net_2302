@@ -15,11 +15,11 @@ namespace UnitOfWork.DataAccess.UnitOfWork
         private readonly MyShopUnitOfWorkDbContext _dbContext;
         //public ProductRepository _products { get; }
 
-        public IEmployeerRepository _employeer { get; }
+        public IEmployeerRepositoryGeneric _employeer { get; }
 
 
         public MyShopUnitOfWork(MyShopUnitOfWorkDbContext dbContext,
-                            IEmployeerRepository employeer)
+                            IEmployeerRepositoryGeneric employeer)
         {
             _dbContext = dbContext;
             _employeer = employeer;

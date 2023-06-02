@@ -80,7 +80,8 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddTransient<IUnitOfWork, MyShopUnitOfWork>();
 //builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
+//builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
+builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>();
 
 var app = builder.Build();
 

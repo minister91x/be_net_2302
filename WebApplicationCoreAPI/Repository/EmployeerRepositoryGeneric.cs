@@ -11,9 +11,9 @@ using WebApplicationCoreAPI.Repository;
 
 namespace UnitOfWork.DataAccess.Repository
 {
-    public class EmployeerRepositoryGeneric :GenericRepository<NHANVIEN>, IEmployeerRepositoryGeneric
+    public class EmployeerRepositoryGeneric : GenericRepository<NHANVIEN>, IEmployeerRepositoryGeneric
     {
         public EmployeerRepositoryGeneric(MyShopUnitOfWorkDbContext context) : base(context) { }
     }
 }
-}
+

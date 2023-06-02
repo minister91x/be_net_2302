@@ -30,7 +30,7 @@ namespace WebApplicationCoreAPI.Controllers
 
             // var list = await _productServices.GetProducts();
 
-            var list = _unitOfWork._employeer.GetListNhanVien();
+            var list = _unitOfWork._employeer.GetAll();
 
             //  unitOfwork.ProductRepos.Product_GetAll();
 
