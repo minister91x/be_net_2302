@@ -9,17 +9,21 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using NLog;
 using System.Text;
 using UnitOfWork.DataAccess.DbContext;
 using UnitOfWork.DataAccess.Interface;
 using UnitOfWork.DataAccess.Repository;
 using UnitOfWork.DataAccess.UnitOfWork;
 using WebApplicationCoreAPI.Interface;
+using WebApplicationCoreAPI.LoggerService;
 using WebApplicationCoreAPI.Repository;
 using WebApplicationCoreAPI.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/NLog.config"));
+
 // Add services to the container.
 builder.Services.AddDbContext<MyShopUnitOfWorkDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
@@ -81,7 +85,8 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddTransient<IUnitOfWork, MyShopUnitOfWork>();
 //builder.Services.AddTransient<IProductRepository, ProductRepository>();
 //builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
-builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>();
+builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>(); builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
+builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
 
 var app = builder.Build();
 

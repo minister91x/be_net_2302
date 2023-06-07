@@ -1,0 +1,9 @@
+2023-06-07 20:28:02.4338 INFO Here is info message from the controller.
+2023-06-07 20:28:02.4715 DEBUG Here is debug message from the controller.
+2023-06-07 20:28:02.4812 WARN Here is warn message from the controller.
+2023-06-07 20:28:02.4812 ERROR Here is error message from the controller.
+2023-06-07 20:31:56.3597 INFO logId:638217667139633404| employeerData:[{"MaNV":"NV002","HoNV":"Trần ","TenNV":"Văn","GioiTinh":false,"NgaySinh":"2023-06-07T00:00:00","DiaChi":"TPHCM","DienThoai":"111"},{"MaNV":"NV011","HoNV":"Nguyễn ","TenNV":"Quân","GioiTinh":true,"NgaySinh":"2023-06-02T00:00:00","DiaChi":"Hà nội","DienThoai":"02323244"}]
+2023-06-07 20:33:17.8083 INFO logId:638217667953801917| employeerData:[{"MaNV":"NV002","HoNV":"Trần ","TenNV":"Văn","GioiTinh":false,"NgaySinh":"2023-06-07T00:00:00","DiaChi":"TPHCM","DienThoai":"111"},{"MaNV":"NV011","HoNV":"Nguyễn ","TenNV":"Quân","GioiTinh":true,"NgaySinh":"2023-06-02T00:00:00","DiaChi":"Hà nội","DienThoai":"02323244"}]
+2023-06-07 20:33:17.8448 INFO logId:638217667953801917| b:2
+2023-06-07 20:34:36.5273 INFO logId:638217668739450745|HomeController GetStringData employeerData:[{"MaNV":"NV002","HoNV":"Trần ","TenNV":"Văn","GioiTinh":false,"NgaySinh":"2023-06-07T00:00:00","DiaChi":"TPHCM","DienThoai":"111"},{"MaNV":"NV011","HoNV":"Nguyễn ","TenNV":"Quân","GioiTinh":true,"NgaySinh":"2023-06-02T00:00:00","DiaChi":"Hà nội","DienThoai":"02323244"}]
+2023-06-07 20:34:36.5623 INFO logId:638217668739450745| b:2
