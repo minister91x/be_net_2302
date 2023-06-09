@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using UnitOfWork.DataAccess.DbContext;
 using UnitOfWork.DataAccess.Entities;
 using UnitOfWork.DataAccess.UnitOfWork;
+using WebApplicationCoreAPI.Filter;
 using WebApplicationCoreAPI.Helper;
 using WebApplicationCoreAPI.LoggerService;
 using WebApplicationCoreAPI.UnitOfWork;
@@ -25,6 +26,16 @@ namespace WebApplicationCoreAPI.Controllers
             _loggerManager = loggerManager;
         }
 
+
+        [HttpPost("Index")]
+        [CustomExceptionFilter()]
+        public async Task<ActionResult> Index()
+        {
+            var a = 10;
+            var b = 0;
+            var c = a / b;
+            return Ok();
+        }
 
         [HttpPost("GetStringData")]
         // [AuthorizeDemo()]

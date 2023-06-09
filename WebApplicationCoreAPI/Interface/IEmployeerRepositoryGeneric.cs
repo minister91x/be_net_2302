@@ -10,5 +10,6 @@ namespace UnitOfWork.DataAccess.Interface
 {
     public interface IEmployeerRepositoryGeneric : IGenericRepository<NHANVIEN>
     {
+        // hàm 
     }
 }

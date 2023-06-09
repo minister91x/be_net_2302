@@ -15,6 +15,7 @@ using UnitOfWork.DataAccess.DbContext;
 using UnitOfWork.DataAccess.Interface;
 using UnitOfWork.DataAccess.Repository;
 using UnitOfWork.DataAccess.UnitOfWork;
+using WebApplicationCoreAPI.Filter;
 using WebApplicationCoreAPI.Interface;
 using WebApplicationCoreAPI.LoggerService;
 using WebApplicationCoreAPI.Repository;
@@ -27,8 +28,9 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/NL
 // Add services to the container.
 builder.Services.AddDbContext<MyShopUnitOfWorkDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
-              
 
+//builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomeExceptionFilter)); });
+builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomExceptionFilterAttribute)); });
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -53,6 +55,8 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -85,7 +89,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddTransient<IUnitOfWork, MyShopUnitOfWork>();
 //builder.Services.AddTransient<IProductRepository, ProductRepository>();
 //builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
-builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>(); builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
+builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>();
 builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
 
 var app = builder.Build();
