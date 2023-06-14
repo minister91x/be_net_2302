@@ -12,7 +12,21 @@
   <NoWarn>$(NoWarn);1591</NoWarn>
 </PropertyGroup>
 
+
+<ItemGroup>
+  <None Remove="Employeer\site.css" />
+</ItemGroup>
+
+
+<ItemGroup>
+  <Content Include="Employeer\site.css">
+    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </Content>
+</ItemGroup>
+
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">

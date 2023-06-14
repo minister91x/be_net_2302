@@ -7,9 +7,10 @@ namespace WebApplicationCoreAPI.Filter
 {
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
     {
-        
-        public CustomExceptionFilterAttribute()
+        private ILogger<CustomExceptionFilterAttribute> _Logger;
+        public CustomExceptionFilterAttribute(ILogger<CustomExceptionFilterAttribute> loggerManager)
         {
+            _Logger = loggerManager;
         }
 
         public override void OnException(ExceptionContext context)
@@ -26,7 +27,9 @@ namespace WebApplicationCoreAPI.Filter
                 context.HttpContext.Response.StatusCode = (int)userFriendlyException.Status;
                 context.ExceptionHandled = true;
 
-                //_loggerManager.LogError(context.Exception.StackTrace) ;
+                _Logger.LogWarning($"aaaaaaaaaaaaaaaaaaaaaa: {context.Exception.Message}", context.Exception);
+                _Logger.LogWarning("bbbbbbbbbbbbbbbbbbbbbbb.");
+                _Logger.LogError(new EventId(0), context.Exception, context.Exception.Message);
             }
         }
     }

@@ -7,6 +7,7 @@ using DataAccess.DependencyInjection.IServices;
 using DataAccess.DependencyInjection.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog;
@@ -31,6 +32,8 @@ builder.Services.AddDbContext<MyShopUnitOfWorkDbContext>(options =>
 
 //builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomeExceptionFilter)); });
 builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomExceptionFilterAttribute)); });
+
+builder.Services.AddScoped<CustomExceptionFilterAttribute>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -104,5 +107,17 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 app.UseAuthentication();
 app.MapControllers();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx => {
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Headers",
+          "Origin, X-Requested-With, Content-Type, Accept");
+    },
+    FileProvider = new PhysicalFileProvider(
+           Path.Combine(builder.Environment.ContentRootPath, "Employeer")),
+    RequestPath = "/Employeer"
+});
+
 
 app.Run();
