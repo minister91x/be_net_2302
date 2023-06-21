@@ -1,24 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using WebApplicationCore.Models;
+using WebApplicationCore.Services;
 
 namespace WebApplicationCore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IConfiguration _configuration;
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public IActionResult Index(StudentEditModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            var url = _configuration["API_URL:STUDENT_API_URL"] ?? "http://localhost:5243/api/Home/";
+
+            var modelInput = new StudentGetlistInputRequest { Name="Quan" };
+
+            var jsonData = JsonConvert.SerializeObject(modelInput);
+
+            var list = StudentServices.GetAllStudent(url, jsonData);
+
             return View();
         }
 
@@ -29,6 +36,8 @@ namespace WebApplicationCore.Controllers
             {
                 return null;
             }
+
+          
             return View();
         }
         public IActionResult Privacy()

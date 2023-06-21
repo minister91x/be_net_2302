@@ -24,3 +24,6 @@ C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\obj\Debug\net6.0\refi
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\obj\Debug\net6.0\WebApplicationCore.pdb
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\obj\Debug\net6.0\WebApplicationCore.genruntimeconfig.cache
 C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\obj\Debug\net6.0\ref\WebApplicationCore.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Admin\source\repos\BE_NET_2302\WebApplicationCore\obj\Debug\net6.0\WebApplicationCore.csproj.CopyComplete

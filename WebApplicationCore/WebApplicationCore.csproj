@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RestSharp">
+      <HintPath>..\BE_NET_2302\Helper\RestSharp\RestSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -21,4 +21,13 @@ namespace WebApplicationCore.Models
 
 
     }
+    public class StudentGetlistInputRequest
+    {
+        /// <summary>
+        /// Trường này là điển nội dung muốn hiển thị
+        /// </summary>
+        public string? Name { get; set; }
+    }
+
+
 }
