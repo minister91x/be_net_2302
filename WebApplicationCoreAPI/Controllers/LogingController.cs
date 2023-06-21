@@ -20,7 +20,7 @@ namespace WebApplicationCoreAPI.Controllers
         [HttpPost("Index")]
         public IActionResult Index()
         {
-            var student = new Student("MrQuan", "BE_NET_CORE_0323", _logger);
+           // var student = new Student("MrQuan", "BE_NET_CORE_0323", _logger);
             return Ok();
         }
 

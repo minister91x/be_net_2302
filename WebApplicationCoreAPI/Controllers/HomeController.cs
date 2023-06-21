@@ -6,6 +6,7 @@ using OfficeOpenXml;
 using UnitOfWork.DataAccess.DbContext;
 using UnitOfWork.DataAccess.Entities;
 using UnitOfWork.DataAccess.UnitOfWork;
+using WebApplicationCoreAPI.Entities;
 using WebApplicationCoreAPI.Filter;
 using WebApplicationCoreAPI.Helper;
 using WebApplicationCoreAPI.LoggerService;
@@ -16,26 +17,32 @@ namespace WebApplicationCoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
+   // [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
     public class HomeController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ILoggerManager _loggerManager;
-        public HomeController(IConfiguration configuration, IUnitOfWork unitOfWork, ILoggerManager loggerManager)
+       // private readonly ILoggerManager _loggerManager;
+        public HomeController(IConfiguration configuration, IUnitOfWork unitOfWork)
         {
             _configuration = configuration;
             _unitOfWork = unitOfWork;
-            _loggerManager = loggerManager;
+            //_loggerManager = loggerManager;
         }
 
 
         [HttpPost("Index")]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(Student student)
         {
-            var a = 10;
-            var b = 0;
-            var c = a / b;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+
+            //var a = 10;
+            //var b = 0;
+            //var c = a / b;
             return Ok();
         }
 
@@ -49,11 +56,11 @@ namespace WebApplicationCoreAPI.Controllers
             // var list = await _productServices.GetProducts();
             var a = 1;
             var list = _unitOfWork._employeer.GetAll();
-            _loggerManager.LogInfo("logId:" + logId + "|HomeController GetStringData employeerData:" + JsonConvert.SerializeObject(list));
+           // _loggerManager.LogInfo("logId:" + logId + "|HomeController GetStringData employeerData:" + JsonConvert.SerializeObject(list));
             //  unitOfwork.ProductRepos.Product_GetAll();
 
             var b = 2;
-            _loggerManager.LogInfo("logId:" + logId + "| b:" + b);
+         //   _loggerManager.LogInfo("logId:" + logId + "| b:" + b);
 
             return Ok(list);
         }

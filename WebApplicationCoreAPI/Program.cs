@@ -33,7 +33,7 @@ builder.Services.AddDbContext<MyShopUnitOfWorkDbContext>(options =>
 //builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomeExceptionFilter)); });
 builder.Services.AddControllers(option => { option.Filters.Add(typeof(CustomExceptionFilterAttribute)); });
 
-builder.Services.AddScoped<CustomExceptionFilterAttribute>();
+//builder.Services.AddScoped<CustomExceptionFilterAttribute>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -93,7 +93,7 @@ builder.Services.AddTransient<IUnitOfWork, MyShopUnitOfWork>();
 //builder.Services.AddTransient<IProductRepository, ProductRepository>();
 //builder.Services.AddTransient<IEmployeerRepository, EmployeerRepository>();
 builder.Services.AddTransient<IEmployeerRepositoryGeneric, EmployeerRepositoryGeneric>();
-builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
+//builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
 
 var app = builder.Build();
 

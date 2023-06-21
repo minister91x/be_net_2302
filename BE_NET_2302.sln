@@ -19,15 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationCoreAPI", "We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationWebCore", "WebApplicationWebCore\WebApplicationWebCore.csproj", "{6790B44A-66B4-46F7-BDED-8F5AF50B6D5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationCoreFull", "WebApplicationCoreFull\WebApplicationCoreFull.csproj", "{638C9307-1572-40D7-A396-76D2BE260A7E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.DependencyInjection", "DataAccess.DependencyInjection\DataAccess.DependencyInjection.csproj", "{72824EF7-DED9-448A-B7D7-7EC5A78D6F31}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.DenpencyInjection.Models", "DataAccess.DenpencyInjection.Models\DataAccess.DenpencyInjection.Models.csproj", "{AFAE0D6B-8B08-490F-99A2-F6CF7C3826C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityWebAPI", "IdentityWebAPI\IdentityWebAPI.csproj", "{8E5FFCDB-4506-4196-B1D0-E9FBAB2EF033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork.DataAccess", "UnitOfWork.DataAccess\UnitOfWork.DataAccess.csproj", "{D7A6D23F-A9EB-4A3A-A377-E8B28B56F2B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWork.DataAccess", "UnitOfWork.DataAccess\UnitOfWork.DataAccess.csproj", "{D7A6D23F-A9EB-4A3A-A377-E8B28B56F2B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationCore", "WebApplicationCore\WebApplicationCore.csproj", "{DB0F69E1-388C-4CC5-B2E3-3F454DB9FA3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +67,6 @@ Global
 		{6790B44A-66B4-46F7-BDED-8F5AF50B6D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6790B44A-66B4-46F7-BDED-8F5AF50B6D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6790B44A-66B4-46F7-BDED-8F5AF50B6D5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{638C9307-1572-40D7-A396-76D2BE260A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{638C9307-1572-40D7-A396-76D2BE260A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{638C9307-1572-40D7-A396-76D2BE260A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{638C9307-1572-40D7-A396-76D2BE260A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72824EF7-DED9-448A-B7D7-7EC5A78D6F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72824EF7-DED9-448A-B7D7-7EC5A78D6F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72824EF7-DED9-448A-B7D7-7EC5A78D6F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{D7A6D23F-A9EB-4A3A-A377-E8B28B56F2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7A6D23F-A9EB-4A3A-A377-E8B28B56F2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7A6D23F-A9EB-4A3A-A377-E8B28B56F2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB0F69E1-388C-4CC5-B2E3-3F454DB9FA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0F69E1-388C-4CC5-B2E3-3F454DB9FA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0F69E1-388C-4CC5-B2E3-3F454DB9FA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0F69E1-388C-4CC5-B2E3-3F454DB9FA3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
