@@ -1,0 +1,38 @@
+﻿@model List<WebApplicationCore.Models.ShoppingCartModel>
+
+
+<div class="container">
+    <h2>Danh sách sản phẩm</h2>
+    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên san phẩm</th>
+                <th>Mã sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    var totalAmount = item.CustomPrice * item.Quality;
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductID</td>
+                        <td>@item.CustomPrice</td>
+                        <td><input type="text" id="txtQuantity" value="@item.Quality" /></td>
+                        <td>@totalAmount</td>
+                        <td><a data-productid="@item.ProductID" data-productname="@item.ProductName" onclick="RemoveItemFromCart(this)"><i class="fa fa-cart">Xóa</i></a></td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+

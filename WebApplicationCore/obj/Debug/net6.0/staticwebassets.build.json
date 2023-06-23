@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZFFpt6/pMLyJgzkpSxNMiURCZKiZDjsegcNIdAyZ6VI=",
+  "Hash": "wtZS8weTi3ZvVXoYaAydsPR0lE9LT+7rnHHDgL2GGcA=",
   "Source": "WebApplicationCore",
   "BasePath": "_content/WebApplicationCore",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\js\\js.cookie.js",
+      "SourceId": "WebApplicationCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\",
+      "BasePath": "_content/WebApplicationCore",
+      "RelativePath": "js/js.cookie.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\js.cookie.js"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\js\\site.js",
       "SourceId": "WebApplicationCore",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\js\\StoreCart.js",
+      "SourceId": "WebApplicationCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\",
+      "BasePath": "_content/WebApplicationCore",
+      "RelativePath": "js/StoreCart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\StoreCart.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\BE_NET_2302\\WebApplicationCore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

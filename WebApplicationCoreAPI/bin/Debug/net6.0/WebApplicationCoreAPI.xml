@@ -14,6 +14,11 @@
             Trường này là điển nội dung muốn hiển thị
             </summary>
         </member>
+        <member name="P:WebApplicationCoreAPI.ProductGetlistInputRequest.MaSP">
+            <summary>
+            Trường này là điển nội dung muốn hiển thị
+            </summary>
+        </member>
         <member name="T:WebApplicationCoreAPI.Migrations.Initial">
             <inheritdoc />
         </member>

@@ -17,12 +17,12 @@ namespace WebApplicationCoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
+    // [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
     public class HomeController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _unitOfWork;
-       // private readonly ILoggerManager _loggerManager;
+        // private readonly ILoggerManager _loggerManager;
         public HomeController(IConfiguration configuration, IUnitOfWork unitOfWork)
         {
             _configuration = configuration;
@@ -56,11 +56,11 @@ namespace WebApplicationCoreAPI.Controllers
             // var list = await _productServices.GetProducts();
             var a = 1;
             var list = _unitOfWork._employeer.GetAll();
-           // _loggerManager.LogInfo("logId:" + logId + "|HomeController GetStringData employeerData:" + JsonConvert.SerializeObject(list));
+            // _loggerManager.LogInfo("logId:" + logId + "|HomeController GetStringData employeerData:" + JsonConvert.SerializeObject(list));
             //  unitOfwork.ProductRepos.Product_GetAll();
 
             var b = 2;
-         //   _loggerManager.LogInfo("logId:" + logId + "| b:" + b);
+            //   _loggerManager.LogInfo("logId:" + logId + "| b:" + b);
 
             return Ok(list);
         }
@@ -105,7 +105,7 @@ namespace WebApplicationCoreAPI.Controllers
                         var price = worksheet.Cells[row, 4]?.Value?.ToString()?.Trim();
                         var date_export = worksheet.Cells[row, 5]?.Value?.ToString()?.Trim();
 
-                       
+
 
                         //var datenumval = !string.IsNullOrEmpty(date_export) ? date_export.Split(' ')[0].ToString() : string.Empty;
                         ////16/04/2023
@@ -129,6 +129,32 @@ namespace WebApplicationCoreAPI.Controllers
             }
 
             return Ok(listModel);
+        }
+
+        [HttpPost("GetListProduct")]
+        public async Task<ActionResult> GetListProduct(ProductGetlistInputRequest request)
+        {
+            await Task.Yield();
+            var list = new List<SANPHAM>();
+            for (int i = 0; i < 5; i++)
+            {
+                list.Add(new SANPHAM
+                {
+                    TenSP = "Iphone 1" + i,
+                    MaSP = "IPHONE_" + i,
+                    DonGia = 10000 + i
+                });
+            }
+
+            if (request != null)
+            {
+                if (!string.IsNullOrEmpty(request.MaSP))
+                {
+                    list = list.FindAll(s => s.MaSP == request.MaSP).ToList();
+                }
+            }
+
+            return Ok(list);
         }
     }
 }

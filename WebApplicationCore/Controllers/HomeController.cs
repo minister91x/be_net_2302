@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Web;
 using WebApplicationCore.Models;
 using WebApplicationCore.Services;
 
@@ -20,13 +21,46 @@ namespace WebApplicationCore.Controllers
         {
             var url = _configuration["API_URL:STUDENT_API_URL"] ?? "http://localhost:5243/api/Home/";
 
-            var modelInput = new StudentGetlistInputRequest { Name="Quan" };
+            var modelInput = new StudentGetlistInputRequest { Name = "Quan" };
 
             var jsonData = JsonConvert.SerializeObject(modelInput);
 
             var list = StudentServices.GetAllStudent(url, jsonData);
 
             return View();
+        }
+
+        public ActionResult ListProduct()
+        {
+            var url = _configuration["API_URL:STUDENT_API_PROD"] ?? "http://localhost:5243/api/Home/";
+
+
+            var modelInput = new ProductGetlistInputRequest { MaSP = "" };
+
+            var jsonData = JsonConvert.SerializeObject(modelInput);
+            var list = ProductServices.GetListProduct(url, jsonData);
+            return View(list);
+        }
+
+        public ActionResult CheckOut()
+         {
+            var list = new List<ShoppingCartModel>();
+            try
+            {
+                var cookie = Request.Cookies["ShoppingCart"] != null ? Request.Cookies["ShoppingCart"] : string.Empty;
+                if (cookie != null && !string.IsNullOrEmpty(cookie))
+                {
+                    list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ShoppingCartModel>>(HttpUtility.UrlDecode(cookie));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return View(list);
+
+
         }
 
 
@@ -37,7 +71,7 @@ namespace WebApplicationCore.Controllers
                 return null;
             }
 
-          
+
             return View();
         }
         public IActionResult Privacy()
