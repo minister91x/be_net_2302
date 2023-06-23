@@ -115,6 +115,27 @@ RemoveItemFromCart = function (e) {
 
 }
 
+UpdateItemToCart = function (e) {
+
+    var quantity = $('#Quality').val();
+
+    var item = {
+        ProductID: $(e).data('product'),
+    };
+    var store = GetCookie('ShoppingCart');
+
+    var index = store.findIndex(function (d) {
+        return d.ProductID == item.ProductID && d.AttrID == item.AttrID;
+    });
+
+    if (store.length == 0 || index == -1) {
+        return;
+    }
+
+    store[index].Quality = quantity;
+    SetCookie('ShoppingCart', store);
+}
+
 
 AddAndUpdateShoppingCart = function (store, item) {
     console.log(store);
