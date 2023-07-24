@@ -118,7 +118,7 @@ RemoveItemFromCart = function (e) {
 UpdateItemToCart = function (e) {
 
     var quantity = $('#Quality').val();
-
+  
     var item = {
         ProductID: $(e).data('product'),
     };
